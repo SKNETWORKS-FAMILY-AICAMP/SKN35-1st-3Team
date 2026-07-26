@@ -1,0 +1,1352 @@
+[
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "캐스퍼",
+    "body_type": "경차",
+    "car_description": "가성비 좋은 경형 SUV, 짧은 출퇴근에 적합",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://m.casper.hyundai.com/wcontents/attach-1/2021/08/016/movie/main.png",
+    "new_car_url": "https://casper.hyundai.com/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BA%90%EC%8A%A4%ED%8D%BC"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "아반떼",
+    "body_type": "준중형세단",
+    "car_description": "현대차 베스트셀링 준중형 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/avante-26my-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/avante/intro",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%95%84%EB%B0%98%EB%96%BC"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "쏘나타",
+    "body_type": "중형세단",
+    "car_description": "안정적인 승차감의 중형 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/sonata-the-edge-26my-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/sonata-the-edge/intro",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%8F%98%EB%82%98%ED%83%80"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "그랜저",
+    "body_type": "준대형세단",
+    "car_description": "국민 준대형 세단, 품격 있는 비즈니스카",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/grandeur-27fl-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/grandeur/intro",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EA%B7%B8%EB%9E%9C%EC%A0%80"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "베뉴",
+    "body_type": "SUV",
+    "car_description": "현대차 엔트리 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/venue-27my-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/venue/intro",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%B2%A0%EB%89%B4"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "코나",
+    "body_type": "SUV",
+    "car_description": "개성있는 디자인의 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/kona-27my-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/kona/intro",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BD%94%EB%82%98"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "투싼",
+    "body_type": "SUV",
+    "car_description": "실용적인 준중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/tucson-26my-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/tucson/intro/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%88%AC%EC%8B%BC"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "싼타페",
+    "body_type": "SUV",
+    "car_description": "넉넉한 공간의 중형 SUV, 가족 나들이용",
+    "vec_purpose": "가족",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/santafe-26my-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/santafe/intro",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%8B%BC%ED%83%80%ED%8E%98"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "팰리세이드",
+    "body_type": "대형SUV",
+    "car_description": "3열까지 여유로운 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/meta-palisade-25fc-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/the-all-new-palisade/intro",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%8C%B0%EB%A6%AC%EC%84%B8%EC%9D%B4%EB%93%9C"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "스타리아",
+    "body_type": "MPV",
+    "car_description": "다인승 미니밴, 캠핑·가족 여행에 적합",
+    "vec_purpose": "캠핑",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/staria-26pe-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/staria/intro",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%8A%A4%ED%83%80%EB%A6%AC%EC%95%84"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "아이오닉5",
+    "body_type": "SUV",
+    "car_description": "현대차 전용 전기 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/ioniq5-27my-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/ioniq5/intro/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%95%84%EC%9D%B4%EC%98%A4%EB%8B%895"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "아이오닉6",
+    "body_type": "세단",
+    "car_description": "공기역학적 디자인의 전기 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/ioniq6-25fl-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/the-new-ioniq6/intro/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%95%84%EC%9D%B4%EC%98%A4%EB%8B%896"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "아이오닉9",
+    "body_type": "대형SUV",
+    "car_description": "3열 대형 전기 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/ioniq9-27my-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/ioniq9/intro/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%95%84%EC%9D%B4%EC%98%A4%EB%8B%899"
+  },
+  {
+    "manufacturer_name": "현대자동차",
+    "vehicle_name": "넥쏘",
+    "body_type": "SUV",
+    "car_description": "수소전기 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.hyundai.com/contents/repn-car/side-45/nexo-27my-45side.png",
+    "new_car_url": "https://www.hyundai.com/kr/ko/e/vehicles/nexo/intro",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%84%A5%EC%8F%98"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "모닝",
+    "body_type": "경차",
+    "car_description": "기아 엔트리 경차",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krja305/morning_s_a2g.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/morning/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%AA%A8%EB%8B%9D"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "레이",
+    "body_type": "경차",
+    "car_description": "박스형 경차, 넓은 실내가 장점",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krtm311/ray_s_ud.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/ray/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%A0%88%EC%9D%B4"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "K5",
+    "body_type": "중형세단",
+    "car_description": "스포티한 디자인의 중형 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krdl243/k5_s_c7s.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/k5/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+K5"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "K8",
+    "body_type": "준대형세단",
+    "car_description": "그랜저급 준대형 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krgl301/k8_s_byg.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/k8/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+K8"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "셀토스",
+    "body_type": "SUV",
+    "car_description": "소형 SUV 베스트셀러",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krst290/seltos_s_swp.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/seltos/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%85%80%ED%86%A0%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "니로",
+    "body_type": "SUV",
+    "car_description": "하이브리드/전기 대표 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krsg300/niro-hybrid_s_cge.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/niro/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%8B%88%EB%A1%9C"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "스포티지",
+    "body_type": "SUV",
+    "car_description": "글로벌 판매 1위 준중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krnq259/sportage_nqjj5ab36_a_c7a.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/sportage/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%8A%A4%ED%8F%AC%ED%8B%B0%EC%A7%80"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "쏘렌토",
+    "body_type": "SUV",
+    "car_description": "패밀리형 중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krmq255/sorento_s_bn4.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/sorento/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%8F%98%EB%A0%8C%ED%86%A0"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "모하비",
+    "body_type": "대형SUV",
+    "car_description": "프레임 바디의 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EA%B8%B0%EC%95%84+%EB%AA%A8%ED%95%98%EB%B9%84",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%AA%A8%ED%95%98%EB%B9%84"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "카니발",
+    "body_type": "MPV",
+    "car_description": "국내 미니밴 시장 1위, 캠핑·다인승에 최적",
+    "vec_purpose": "캠핑",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krkp214/carnival_s_isg.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/carnival/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%B9%B4%EB%8B%88%EB%B0%9C"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "EV3",
+    "body_type": "SUV",
+    "car_description": "준중형 전기 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krsv292/ev3_s_ag3.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/ev3/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+EV3"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "EV5",
+    "body_type": "SUV",
+    "car_description": "중형 전기 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EA%B8%B0%EC%95%84+EV5",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+EV5"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "EV6",
+    "body_type": "SUV",
+    "car_description": "기아 전용 전기 SUV/크로스오버",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krcv253/ev6_s_swp.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/ev6/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+EV6"
+  },
+  {
+    "manufacturer_name": "기아",
+    "vehicle_name": "EV9",
+    "body_type": "대형SUV",
+    "car_description": "3열 대형 전기 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krmv297/ev9_s_ism.png?imwidth=800",
+    "new_car_url": "https://www.kia.com/kr/vehicles/ev9/features",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+EV9"
+  },
+  {
+    "manufacturer_name": "제네시스",
+    "vehicle_name": "G70",
+    "body_type": "세단",
+    "car_description": "제네시스 엔트리 럭셔리 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://dams.hyundai-autoever.com/v1/openapi/hmg-presigned-url/50534b313031303030303030303030303130333833/models/g70/2026/key-visual/genesis-g70-2026-key-visual-large.jpg",
+    "new_car_url": "https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g70/highlights.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+G70"
+  },
+  {
+    "manufacturer_name": "제네시스",
+    "vehicle_name": "G80",
+    "body_type": "세단",
+    "car_description": "준대형 럭셔리 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%A0%9C%EB%84%A4%EC%8B%9C%EC%8A%A4+G80",
+    "new_car_url": "https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+G80"
+  },
+  {
+    "manufacturer_name": "제네시스",
+    "vehicle_name": "G90",
+    "body_type": "세단",
+    "car_description": "제네시스 플래그십 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%A0%9C%EB%84%A4%EC%8B%9C%EC%8A%A4+G90",
+    "new_car_url": "https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+G90"
+  },
+  {
+    "manufacturer_name": "제네시스",
+    "vehicle_name": "GV60",
+    "body_type": "SUV",
+    "car_description": "제네시스 전용 전기 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%A0%9C%EB%84%A4%EC%8B%9C%EC%8A%A4+GV60",
+    "new_car_url": "https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv60/highlights.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GV60"
+  },
+  {
+    "manufacturer_name": "제네시스",
+    "vehicle_name": "GV70",
+    "body_type": "SUV",
+    "car_description": "스포티한 중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%A0%9C%EB%84%A4%EC%8B%9C%EC%8A%A4+GV70",
+    "new_car_url": "https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv70/highlights.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GV70"
+  },
+  {
+    "manufacturer_name": "제네시스",
+    "vehicle_name": "GV80",
+    "body_type": "SUV",
+    "car_description": "제네시스 대표 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%A0%9C%EB%84%A4%EC%8B%9C%EC%8A%A4+GV80",
+    "new_car_url": "https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv80/highlights.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GV80"
+  },
+  {
+    "manufacturer_name": "제네시스",
+    "vehicle_name": "GV80 쿠페",
+    "body_type": "SUV",
+    "car_description": "GV80의 쿠페형 파생 모델",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%A0%9C%EB%84%A4%EC%8B%9C%EC%8A%A4+GV80+%EC%BF%A0%ED%8E%98",
+    "new_car_url": "https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv80-coupe/highlights.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GV80+%EC%BF%A0%ED%8E%98"
+  },
+  {
+    "manufacturer_name": "KG모빌리티",
+    "vehicle_name": "티볼리",
+    "body_type": "SUV",
+    "car_description": "KGM 엔트리 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=KG%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0+%ED%8B%B0%EB%B3%BC%EB%A6%AC",
+    "new_car_url": "https://www.kg-mobility.com/pr/model/show-room/200000100010007",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%8B%B0%EB%B3%BC%EB%A6%AC"
+  },
+  {
+    "manufacturer_name": "KG모빌리티",
+    "vehicle_name": "코란도",
+    "body_type": "SUV",
+    "car_description": "준중형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=KG%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0+%EC%BD%94%EB%9E%80%EB%8F%84",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BD%94%EB%9E%80%EB%8F%84"
+  },
+  {
+    "manufacturer_name": "KG모빌리티",
+    "vehicle_name": "액티언",
+    "body_type": "SUV",
+    "car_description": "쿠페형 중형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=KG%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0+%EC%95%A1%ED%8B%B0%EC%96%B8",
+    "new_car_url": "https://www.kg-mobility.com/pr/model/show-room/200000100010016",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%95%A1%ED%8B%B0%EC%96%B8"
+  },
+  {
+    "manufacturer_name": "KG모빌리티",
+    "vehicle_name": "토레스",
+    "body_type": "SUV",
+    "car_description": "정통 SUV 스타일의 중형 SUV",
+    "vec_purpose": "캠핑",
+    "car_img": "https://placehold.co/600x400.png?text=KG%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0+%ED%86%A0%EB%A0%88%EC%8A%A4",
+    "new_car_url": "https://www.kg-mobility.com/pr/model/show-room/200000100010001",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%86%A0%EB%A0%88%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "KG모빌리티",
+    "vehicle_name": "토레스 EVX",
+    "body_type": "SUV",
+    "car_description": "토레스 기반 전기 SUV",
+    "vec_purpose": "캠핑",
+    "car_img": "https://placehold.co/600x400.png?text=KG%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0+%ED%86%A0%EB%A0%88%EC%8A%A4+EVX",
+    "new_car_url": "https://www.kg-mobility.com/kr/showroom/torresevx/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%86%A0%EB%A0%88%EC%8A%A4+EVX"
+  },
+  {
+    "manufacturer_name": "KG모빌리티",
+    "vehicle_name": "무쏘 스포츠 & 무쏘 칸",
+    "body_type": "픽업트럭",
+    "car_description": "국내 픽업트럭 대표 모델(구 렉스턴 스포츠&칸, 2025년 개명)",
+    "vec_purpose": "캠핑",
+    "car_img": "https://placehold.co/600x400.png?text=KG%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0+%EB%AC%B4%EC%8F%98+%EC%8A%A4%ED%8F%AC%EC%B8%A0+%26+%EB%AC%B4%EC%8F%98+%EC%B9%B8",
+    "new_car_url": "https://www.kg-mobility.com/pr/model/show-room/200000100030004",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%AC%B4%EC%8F%98+%EC%8A%A4%ED%8F%AC%EC%B8%A0+%26+%EB%AC%B4%EC%8F%98+%EC%B9%B8"
+  },
+  {
+    "manufacturer_name": "KG모빌리티",
+    "vehicle_name": "무쏘 EV",
+    "body_type": "픽업트럭",
+    "car_description": "전기 픽업트럭",
+    "vec_purpose": "캠핑",
+    "car_img": "https://placehold.co/600x400.png?text=KG%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0+%EB%AC%B4%EC%8F%98+EV",
+    "new_car_url": "https://www.kg-mobility.com/pr/model/show-room/200000100030003",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%AC%B4%EC%8F%98+EV"
+  },
+  {
+    "manufacturer_name": "KG모빌리티",
+    "vehicle_name": "렉스턴",
+    "body_type": "대형SUV",
+    "car_description": "프레임 바디의 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=KG%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0+%EB%A0%89%EC%8A%A4%ED%84%B4",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%A0%89%EC%8A%A4%ED%84%B4"
+  },
+  {
+    "manufacturer_name": "르노코리아",
+    "vehicle_name": "그랑 콜레오스",
+    "body_type": "SUV",
+    "car_description": "하이브리드 인기의 중형 SUV, 르노코리아 판매 대부분 차지",
+    "vec_purpose": "가족",
+    "car_img": "https://cdn.renault.co.kr/ko/resource/img/upload/asset/koleos/carousel/img_carousel01_01.webp",
+    "new_car_url": "https://www.renault.co.kr/ko/model/koleos_overview.jsp",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EA%B7%B8%EB%9E%91+%EC%BD%9C%EB%A0%88%EC%98%A4%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "르노코리아",
+    "vehicle_name": "아르카나",
+    "body_type": "SUV",
+    "car_description": "쿠페형 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A5%B4%EB%85%B8%EC%BD%94%EB%A6%AC%EC%95%84+%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98",
+    "new_car_url": "https://www.renault.co.kr/ko/model/arkana_overview.jsp",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98"
+  },
+  {
+    "manufacturer_name": "쉐보레",
+    "vehicle_name": "트랙스 크로스오버",
+    "body_type": "SUV",
+    "car_description": "국내 생산 소형 SUV, 쉐보레코리아 판매의 대부분 차지",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%89%90%EB%B3%B4%EB%A0%88+%ED%8A%B8%EB%9E%99%EC%8A%A4+%ED%81%AC%EB%A1%9C%EC%8A%A4%EC%98%A4%EB%B2%84",
+    "new_car_url": "https://www.chevrolet.co.kr/cuvs/trax-crossover",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%8A%B8%EB%9E%99%EC%8A%A4+%ED%81%AC%EB%A1%9C%EC%8A%A4%EC%98%A4%EB%B2%84"
+  },
+  {
+    "manufacturer_name": "쉐보레",
+    "vehicle_name": "트레일블레이저",
+    "body_type": "SUV",
+    "car_description": "국내 생산 소형 SUV, 수출 비중이 높음",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%89%90%EB%B3%B4%EB%A0%88+%ED%8A%B8%EB%A0%88%EC%9D%BC%EB%B8%94%EB%A0%88%EC%9D%B4%EC%A0%80",
+    "new_car_url": "https://www.chevrolet.co.kr/suvs/trailblazer",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%8A%B8%EB%A0%88%EC%9D%BC%EB%B8%94%EB%A0%88%EC%9D%B4%EC%A0%80"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "1시리즈",
+    "body_type": "해치백",
+    "car_description": "BMW 엔트리 해치백",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+1%EC%8B%9C%EB%A6%AC%EC%A6%88",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/1-series/bmw-1-series/bmw-1-series.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+1%EC%8B%9C%EB%A6%AC%EC%A6%88"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "2시리즈",
+    "body_type": "쿠페",
+    "car_description": "컴팩트 쿠페/그란쿠페",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+2%EC%8B%9C%EB%A6%AC%EC%A6%88",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/2-series/gran-coupe/bmw-2-series-gran-coupe.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+2%EC%8B%9C%EB%A6%AC%EC%A6%88"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "3시리즈",
+    "body_type": "세단",
+    "car_description": "BMW 대표 스포츠 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+3%EC%8B%9C%EB%A6%AC%EC%A6%88",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/3-series/bmw-3-series-sedan/bmw-3-series-sedan.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+3%EC%8B%9C%EB%A6%AC%EC%A6%88"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "4시리즈",
+    "body_type": "쿠페",
+    "car_description": "3시리즈 기반 쿠페/컨버터블",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+4%EC%8B%9C%EB%A6%AC%EC%A6%88",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/4-series/4-series-coupe/bmw-4-series-coupe.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+4%EC%8B%9C%EB%A6%AC%EC%A6%88"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "5시리즈",
+    "body_type": "세단",
+    "car_description": "비즈니스 세단의 기준",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+5%EC%8B%9C%EB%A6%AC%EC%A6%88",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/5-series/sedan/bmw-5-series-sedan-overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+5%EC%8B%9C%EB%A6%AC%EC%A6%88"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "7시리즈",
+    "body_type": "세단",
+    "car_description": "BMW 플래그십 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+7%EC%8B%9C%EB%A6%AC%EC%A6%88",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/7-series/7-series-sedan/bmw-7-series-sedan.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+7%EC%8B%9C%EB%A6%AC%EC%A6%88"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "X1",
+    "body_type": "SUV",
+    "car_description": "BMW 엔트리 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+X1",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/x-series/x1/bmw-x1.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+X1"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "X2",
+    "body_type": "SUV",
+    "car_description": "쿠페형 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+X2",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/x-series/x2/bmw-x2-overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+X2"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "X3",
+    "body_type": "SUV",
+    "car_description": "준중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+X3",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/x-series/x3/bmw-x3.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+X3"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "X4",
+    "body_type": "SUV",
+    "car_description": "쿠페형 준중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+X4",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+X4"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "X5",
+    "body_type": "SUV",
+    "car_description": "BMW 대표 중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+X5",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/x-series/x5/bmw-x5.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+X5"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "X6",
+    "body_type": "SUV",
+    "car_description": "쿠페형 중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+X6",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/x-series/x6/bmw-x6.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+X6"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "X7",
+    "body_type": "대형SUV",
+    "car_description": "BMW 최상위 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+X7",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/x-series/x7/bmw-x7.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+X7"
+  },
+  {
+    "manufacturer_name": "BMW",
+    "vehicle_name": "i4",
+    "body_type": "세단",
+    "car_description": "3시리즈 기반 전기 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=BMW+i4",
+    "new_car_url": "https://www.bmw.co.kr/ko/all-models/bmw-i/i4/bmw-i4-gran-coupe.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+i4"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "A클래스",
+    "body_type": "세단",
+    "car_description": "벤츠 엔트리 세단/해치백",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+A%ED%81%B4%EB%9E%98%EC%8A%A4",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/hatchback/a-class/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+A%ED%81%B4%EB%9E%98%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "C클래스",
+    "body_type": "세단",
+    "car_description": "준중형 럭셔리 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+C%ED%81%B4%EB%9E%98%EC%8A%A4",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/saloon/c-class/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+C%ED%81%B4%EB%9E%98%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "E클래스",
+    "body_type": "세단",
+    "car_description": "국내 수입차 판매 1위권, 비즈니스 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+E%ED%81%B4%EB%9E%98%EC%8A%A4",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/saloon/e-class/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+E%ED%81%B4%EB%9E%98%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "S클래스",
+    "body_type": "세단",
+    "car_description": "벤츠 플래그십 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+S%ED%81%B4%EB%9E%98%EC%8A%A4",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/saloon/s-class/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+S%ED%81%B4%EB%9E%98%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "CLA",
+    "body_type": "세단",
+    "car_description": "쿠페형 컴팩트 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+CLA",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/coupe/cla/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+CLA"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "GLA",
+    "body_type": "SUV",
+    "car_description": "벤츠 엔트리 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+GLA",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/suv/gla/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GLA"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "GLB",
+    "body_type": "SUV",
+    "car_description": "7인승 옵션의 준중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+GLB",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/suv/glb/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GLB"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "GLC",
+    "body_type": "SUV",
+    "car_description": "준중형 럭셔리 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+GLC",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/suv/glc/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GLC"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "GLE",
+    "body_type": "SUV",
+    "car_description": "중형 럭셔리 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+GLE",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/suv/gle/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GLE"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "GLS",
+    "body_type": "대형SUV",
+    "car_description": "벤츠 최상위 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+GLS",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/suv/gls/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GLS"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "G클래스",
+    "body_type": "SUV",
+    "car_description": "정통 오프로더 SUV",
+    "vec_purpose": "캠핑",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+G%ED%81%B4%EB%9E%98%EC%8A%A4",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/suv/g-class/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+G%ED%81%B4%EB%9E%98%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "EQE",
+    "body_type": "세단",
+    "car_description": "E클래스급 순수 전기 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+EQE",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/suv/eqe/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+EQE"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "EQS",
+    "body_type": "세단",
+    "car_description": "S클래스급 순수 전기 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+EQS",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/saloon/eqs/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+EQS"
+  },
+  {
+    "manufacturer_name": "메르세데스-벤츠",
+    "vehicle_name": "AMG GT",
+    "body_type": "쿠페",
+    "car_description": "벤츠 고성능 스포츠카",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0+AMG+GT",
+    "new_car_url": "https://www.mercedes-benz.co.kr/passengercars/models/coupe/amg-gt-2-door/overview.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+AMG+GT"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "A3",
+    "body_type": "세단",
+    "car_description": "아우디 엔트리 세단/해치백",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+A3",
+    "new_car_url": "https://www.audi.co.kr/ko/models/a3/a3-saloon-2025/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+A3"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "A4",
+    "body_type": "세단",
+    "car_description": "아우디 준중형 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+A4",
+    "new_car_url": "https://www.audi.co.kr/ko/models/a4/a4-saloon_2021/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+A4"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "A6",
+    "body_type": "세단",
+    "car_description": "아우디 중형 비즈니스 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+A6",
+    "new_car_url": "https://www.audi.co.kr/ko/models/a6/a6-sedan-2026/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+A6"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "A7",
+    "body_type": "세단",
+    "car_description": "쿠페형 대형 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+A7",
+    "new_car_url": "https://www.audi.co.kr/ko/models/a7/a7-sportback-2024/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+A7"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "A8",
+    "body_type": "세단",
+    "car_description": "아우디 플래그십 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+A8",
+    "new_car_url": "https://www.audi.co.kr/ko/models/a8/a8_2023/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+A8"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "Q3",
+    "body_type": "SUV",
+    "car_description": "아우디 엔트리 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+Q3",
+    "new_car_url": "https://www.audi.co.kr/ko/models/q3/q3_2022/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+Q3"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "Q5",
+    "body_type": "SUV",
+    "car_description": "콰트로 4륜구동 준중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+Q5",
+    "new_car_url": "https://www.audi.co.kr/ko/models/q5/q5-suv-2025/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+Q5"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "Q7",
+    "body_type": "SUV",
+    "car_description": "7인승 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+Q7",
+    "new_car_url": "https://www.audi.co.kr/ko/models/q7/q7-suv-2025/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+Q7"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "Q8",
+    "body_type": "SUV",
+    "car_description": "쿠페형 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+Q8",
+    "new_car_url": "https://www.audi.co.kr/ko/models/q8/q8-suv-2025/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+Q8"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "Q4 e-tron",
+    "body_type": "SUV",
+    "car_description": "준중형 전기 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+Q4+e-tron",
+    "new_car_url": "https://www.audi.co.kr/ko/models/q4-e-tron/q4etron_2022/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+Q4+e-tron"
+  },
+  {
+    "manufacturer_name": "아우디",
+    "vehicle_name": "e-tron GT",
+    "body_type": "세단",
+    "car_description": "아우디 고성능 전기 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EC%95%84%EC%9A%B0%EB%94%94+e-tron+GT",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+e-tron+GT"
+  },
+  {
+    "manufacturer_name": "폭스바겐",
+    "vehicle_name": "골프",
+    "body_type": "해치백",
+    "car_description": "폭스바겐 스테디셀러 해치백",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.volkswagen.co.kr/etc.clientlibs/clientlibs/vwa-ngw18/ngw18-frontend/apps/resources/statics/img/vw-logo-2x.png",
+    "new_car_url": "https://www.volkswagen.co.kr/ko/models/golf.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EA%B3%A8%ED%94%84"
+  },
+  {
+    "manufacturer_name": "폭스바겐",
+    "vehicle_name": "티구안",
+    "body_type": "SUV",
+    "car_description": "국내 수입 SUV 판매 1위권 준중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%8F%AD%EC%8A%A4%EB%B0%94%EA%B2%90+%ED%8B%B0%EA%B5%AC%EC%95%88",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%8B%B0%EA%B5%AC%EC%95%88"
+  },
+  {
+    "manufacturer_name": "폭스바겐",
+    "vehicle_name": "파사트",
+    "body_type": "세단",
+    "car_description": "중형 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%8F%AD%EC%8A%A4%EB%B0%94%EA%B2%90+%ED%8C%8C%EC%82%AC%ED%8A%B8",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%8C%8C%EC%82%AC%ED%8A%B8"
+  },
+  {
+    "manufacturer_name": "폭스바겐",
+    "vehicle_name": "아테온",
+    "body_type": "세단",
+    "car_description": "쿠페형 준대형 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://www.volkswagen.co.kr/etc.clientlibs/clientlibs/vwa-ngw18/ngw18-frontend/apps/resources/statics/img/vw-logo-2x.png",
+    "new_car_url": "https://www.volkswagen.co.kr/ko/models/suggest_design.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%95%84%ED%85%8C%EC%98%A8"
+  },
+  {
+    "manufacturer_name": "폭스바겐",
+    "vehicle_name": "아틀라스",
+    "body_type": "대형SUV",
+    "car_description": "7인승 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.volkswagen.co.kr/etc.clientlibs/clientlibs/vwa-ngw18/ngw18-frontend/apps/resources/statics/img/vw-logo-2x.png",
+    "new_car_url": "https://www.volkswagen.co.kr/ko/models/atlas.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%95%84%ED%8B%80%EB%9D%BC%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "폭스바겐",
+    "vehicle_name": "ID.4",
+    "body_type": "SUV",
+    "car_description": "폭스바겐 순수 전기 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.volkswagen.co.kr/etc.clientlibs/clientlibs/vwa-ngw18/ngw18-frontend/apps/resources/statics/img/vw-logo-2x.png",
+    "new_car_url": "https://www.volkswagen.co.kr/ko/models/id4.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+ID.4"
+  },
+  {
+    "manufacturer_name": "폭스바겐",
+    "vehicle_name": "ID.7",
+    "body_type": "세단",
+    "car_description": "폭스바겐 순수 전기 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%8F%AD%EC%8A%A4%EB%B0%94%EA%B2%90+ID.7",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+ID.7"
+  },
+  {
+    "manufacturer_name": "볼보",
+    "vehicle_name": "XC40",
+    "body_type": "SUV",
+    "car_description": "안전성 강조한 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%B3%BC%EB%B3%B4+XC40",
+    "new_car_url": "https://www.volvocars.com/kr/cars/xc40/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+XC40"
+  },
+  {
+    "manufacturer_name": "볼보",
+    "vehicle_name": "XC60",
+    "body_type": "SUV",
+    "car_description": "볼보 베스트셀러 중형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%B3%BC%EB%B3%B4+XC60",
+    "new_car_url": "https://www.volvocars.com/kr/cars/xc60/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+XC60"
+  },
+  {
+    "manufacturer_name": "볼보",
+    "vehicle_name": "XC90",
+    "body_type": "대형SUV",
+    "car_description": "7인승 플래그십 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%B3%BC%EB%B3%B4+XC90",
+    "new_car_url": "https://www.volvocars.com/kr/cars/xc90/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+XC90"
+  },
+  {
+    "manufacturer_name": "볼보",
+    "vehicle_name": "S60",
+    "body_type": "세단",
+    "car_description": "준중형 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%B3%BC%EB%B3%B4+S60",
+    "new_car_url": "https://ivy.volvocars.co.kr/v/cars/s60.asp",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+S60"
+  },
+  {
+    "manufacturer_name": "볼보",
+    "vehicle_name": "S90",
+    "body_type": "세단",
+    "car_description": "볼보 플래그십 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%B3%BC%EB%B3%B4+S90",
+    "new_car_url": "https://www.volvocars.com/kr/cars/s90/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+S90"
+  },
+  {
+    "manufacturer_name": "볼보",
+    "vehicle_name": "V60",
+    "body_type": "왜건",
+    "car_description": "왜건형 준중형 모델",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%B3%BC%EB%B3%B4+V60",
+    "new_car_url": "https://www.volvocars.com/kr/cars/v60-cross-country/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+V60"
+  },
+  {
+    "manufacturer_name": "볼보",
+    "vehicle_name": "EX30",
+    "body_type": "SUV",
+    "car_description": "볼보 엔트리 전기 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%B3%BC%EB%B3%B4+EX30",
+    "new_car_url": "https://www.volvocars.com/kr/cars/ex30-electric/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+EX30"
+  },
+  {
+    "manufacturer_name": "볼보",
+    "vehicle_name": "EX90",
+    "body_type": "대형SUV",
+    "car_description": "볼보 플래그십 전기 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%B3%BC%EB%B3%B4+EX90",
+    "new_car_url": "https://www.volvocars.com/kr/cars/ex90-electric/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+EX90"
+  },
+  {
+    "manufacturer_name": "토요타",
+    "vehicle_name": "캠리",
+    "body_type": "세단",
+    "car_description": "토요타 대표 중형 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.toyota.co.kr/image/toyota_cover_camry.jpg",
+    "new_car_url": "https://www.toyota.co.kr/models/camry/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BA%A0%EB%A6%AC"
+  },
+  {
+    "manufacturer_name": "토요타",
+    "vehicle_name": "코롤라",
+    "body_type": "세단",
+    "car_description": "준중형 세단, 뛰어난 연비",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%86%A0%EC%9A%94%ED%83%80+%EC%BD%94%EB%A1%A4%EB%9D%BC",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BD%94%EB%A1%A4%EB%9D%BC"
+  },
+  {
+    "manufacturer_name": "토요타",
+    "vehicle_name": "코롤라 크로스",
+    "body_type": "SUV",
+    "car_description": "코롤라 기반 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%86%A0%EC%9A%94%ED%83%80+%EC%BD%94%EB%A1%A4%EB%9D%BC+%ED%81%AC%EB%A1%9C%EC%8A%A4",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BD%94%EB%A1%A4%EB%9D%BC+%ED%81%AC%EB%A1%9C%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "토요타",
+    "vehicle_name": "RAV4",
+    "body_type": "SUV",
+    "car_description": "글로벌 베스트셀링 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.toyota.co.kr/image/toyota_cover_rav4phev.jpg?v=2",
+    "new_car_url": "https://www.toyota.co.kr/models/rav4phev/?detail_model=rav4phev_gr",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+RAV4"
+  },
+  {
+    "manufacturer_name": "토요타",
+    "vehicle_name": "하이랜더",
+    "body_type": "대형SUV",
+    "car_description": "3열 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.toyota.co.kr/image/toyota_cover_highlander.jpg?v=3",
+    "new_car_url": "https://www.toyota.co.kr/models/highlander/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%95%98%EC%9D%B4%EB%9E%9C%EB%8D%94"
+  },
+  {
+    "manufacturer_name": "토요타",
+    "vehicle_name": "프리우스",
+    "body_type": "세단",
+    "car_description": "하이브리드 대명사",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.toyota.co.kr/image/toyota_cover_priusphev.jpg",
+    "new_car_url": "https://www.toyota.co.kr/models/priusphev/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%94%84%EB%A6%AC%EC%9A%B0%EC%8A%A4"
+  },
+  {
+    "manufacturer_name": "토요타",
+    "vehicle_name": "시에나",
+    "body_type": "MPV",
+    "car_description": "하이브리드 미니밴",
+    "vec_purpose": "캠핑",
+    "car_img": "https://www.toyota.co.kr/image/toyota_cover_sienna.jpg?v=2",
+    "new_car_url": "https://www.toyota.co.kr/models/sienna/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%8B%9C%EC%97%90%EB%82%98"
+  },
+  {
+    "manufacturer_name": "토요타",
+    "vehicle_name": "GR86",
+    "body_type": "쿠페",
+    "car_description": "후륜구동 스포츠 쿠페",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.toyota.co.kr/image/toyota_cover_gr86.jpg",
+    "new_car_url": "https://www.toyota.co.kr/models/gr86/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+GR86"
+  },
+  {
+    "manufacturer_name": "렉서스",
+    "vehicle_name": "ES",
+    "body_type": "세단",
+    "car_description": "렉서스 베스트셀러 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://www.lexus.co.kr/source/sitemap/1200x630_28.jpg",
+    "new_car_url": "https://www.lexus.co.kr/models/ES-300h/#/highlight",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+ES"
+  },
+  {
+    "manufacturer_name": "렉서스",
+    "vehicle_name": "IS",
+    "body_type": "세단",
+    "car_description": "후륜구동 스포츠 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%A0%89%EC%84%9C%EC%8A%A4+IS",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+IS"
+  },
+  {
+    "manufacturer_name": "렉서스",
+    "vehicle_name": "RX",
+    "body_type": "SUV",
+    "car_description": "렉서스 대표 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.lexus.co.kr/source/sitemap/1200x630_29.jpg",
+    "new_car_url": "https://www.lexus.co.kr/models/RX-350h/#/highlight",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+RX"
+  },
+  {
+    "manufacturer_name": "렉서스",
+    "vehicle_name": "NX",
+    "body_type": "SUV",
+    "car_description": "준중형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.lexus.co.kr/source/sitemap/1200x630_32.jpg",
+    "new_car_url": "https://www.lexus.co.kr/models/NX-350h/#/highlight",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+NX"
+  },
+  {
+    "manufacturer_name": "렉서스",
+    "vehicle_name": "UX",
+    "body_type": "SUV",
+    "car_description": "렉서스 엔트리 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://www.lexus.co.kr/source/sitemap/2WD_thumb_A@x2_1_1.jpg",
+    "new_car_url": "https://www.lexus.co.kr/models/UX-300h-2WD/#/highlight",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+UX"
+  },
+  {
+    "manufacturer_name": "렉서스",
+    "vehicle_name": "LS",
+    "body_type": "세단",
+    "car_description": "렉서스 플래그십 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://www.lexus.co.kr/source/sitemap/1200x630_26.jpg",
+    "new_car_url": "https://www.lexus.co.kr/models/LS-500/#/highlight",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+LS"
+  },
+  {
+    "manufacturer_name": "렉서스",
+    "vehicle_name": "LX",
+    "body_type": "대형SUV",
+    "car_description": "프레임 바디 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://www.lexus.co.kr/source/sitemap/VIP_share_thumb_B.jpg",
+    "new_car_url": "https://www.lexus.co.kr/models/LX-700h-VIP/#/highlight",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+LX"
+  },
+  {
+    "manufacturer_name": "혼다",
+    "vehicle_name": "어코드",
+    "body_type": "세단",
+    "car_description": "혼다 중형 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://auto.hondakorea.co.kr/static/images/main/m1-car1.png",
+    "new_car_url": "https://auto.hondakorea.co.kr/purchase/selectOption?carSeq=6&csnTrim=Hybrid&carCd=A0010004&year=2026",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%96%B4%EC%BD%94%EB%93%9C"
+  },
+  {
+    "manufacturer_name": "혼다",
+    "vehicle_name": "시빅",
+    "body_type": "세단",
+    "car_description": "준중형 세단/해치백",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%98%BC%EB%8B%A4+%EC%8B%9C%EB%B9%85",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%8B%9C%EB%B9%85"
+  },
+  {
+    "manufacturer_name": "혼다",
+    "vehicle_name": "CR-V",
+    "body_type": "SUV",
+    "car_description": "혼다 베스트셀러 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://auto.hondakorea.co.kr/static/images/main/m1-car1.png",
+    "new_car_url": "https://auto.hondakorea.co.kr/purchase/selectTrim?carCd=A0010002&carNm=CR-V%20Hybrid&carSeq=3&year=2026",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+CR-V"
+  },
+  {
+    "manufacturer_name": "혼다",
+    "vehicle_name": "HR-V",
+    "body_type": "SUV",
+    "car_description": "혼다 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://auto.hondakorea.co.kr/static/images/main/m1-car1.png",
+    "new_car_url": "https://auto.hondakorea.co.kr/purchase/selectOption?carSeq=5&csnTrim=Black%20Edition&carCd=A0010006&year=2026",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+HR-V"
+  },
+  {
+    "manufacturer_name": "혼다",
+    "vehicle_name": "파일럿",
+    "body_type": "대형SUV",
+    "car_description": "3열 대형 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%98%BC%EB%8B%A4+%ED%8C%8C%EC%9D%BC%EB%9F%BF",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%8C%8C%EC%9D%BC%EB%9F%BF"
+  },
+  {
+    "manufacturer_name": "포르쉐",
+    "vehicle_name": "911",
+    "body_type": "쿠페",
+    "car_description": "포르쉐 아이코닉 스포츠카",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%8F%AC%EB%A5%B4%EC%89%90+911",
+    "new_car_url": "https://www.porsche.com/korea/ko/models/911/#modelRangeId=911",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+911"
+  },
+  {
+    "manufacturer_name": "포르쉐",
+    "vehicle_name": "카이맨",
+    "body_type": "쿠페",
+    "car_description": "미드십 스포츠카",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://a.storyblok.com/f/322327/2400x2400/760d23203d/cm21n3kox0004-718-cayman-gts-40-twitter.jpg/m/2400x2400/smart/filters:format(avif)?dpl=dpl_Hz59koRSnHTVcc2uzfyWHR7dTtVN",
+    "new_car_url": "https://www.porsche.com/korea/ko/models/718/718-models/718-cayman-gts-4/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%B9%B4%EC%9D%B4%EB%A7%A8"
+  },
+  {
+    "manufacturer_name": "포르쉐",
+    "vehicle_name": "카이엔",
+    "body_type": "SUV",
+    "car_description": "포르쉐 베스트셀러 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%8F%AC%EB%A5%B4%EC%89%90+%EC%B9%B4%EC%9D%B4%EC%97%94",
+    "new_car_url": "https://www.porsche.com/korea/ko/models/cayenne/cayenne-models/cayenne/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%B9%B4%EC%9D%B4%EC%97%94"
+  },
+  {
+    "manufacturer_name": "포르쉐",
+    "vehicle_name": "마칸",
+    "body_type": "SUV",
+    "car_description": "포르쉐 엔트리 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%8F%AC%EB%A5%B4%EC%89%90+%EB%A7%88%EC%B9%B8",
+    "new_car_url": "https://www.porsche.com/korea/ko/models/macan/#modelRangeId=macan",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EB%A7%88%EC%B9%B8"
+  },
+  {
+    "manufacturer_name": "포르쉐",
+    "vehicle_name": "파나메라",
+    "body_type": "세단",
+    "car_description": "4도어 그란투리스모",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://a.storyblok.com/f/322327/1200x1200/958e6b2a37/000-twitter-card-panamera-4.jpg/m/1200x1200/smart/filters:format(avif)?dpl=dpl_Hz59koRSnHTVcc2uzfyWHR7dTtVN",
+    "new_car_url": "https://www.porsche.com/korea/ko/models/panamera/panamera-models/panamera-4/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%8C%8C%EB%82%98%EB%A9%94%EB%9D%BC"
+  },
+  {
+    "manufacturer_name": "포르쉐",
+    "vehicle_name": "타이칸",
+    "body_type": "세단",
+    "car_description": "포르쉐 순수 전기 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://a.storyblok.com/f/322327/1200x1200/5aa52c184a/ta24q3eox0007-taycan-turbo-s-pko.jpg/m/1200x1200/smart/filters:format(avif)?dpl=dpl_Hz59koRSnHTVcc2uzfyWHR7dTtVN",
+    "new_car_url": "https://www.porsche.com/korea/ko/models/taycan/taycan-models/taycan/",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%ED%83%80%EC%9D%B4%EC%B9%B8"
+  },
+  {
+    "manufacturer_name": "미니",
+    "vehicle_name": "쿠퍼",
+    "body_type": "해치백",
+    "car_description": "미니 대표 소형 해치백",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%AF%B8%EB%8B%88+%EC%BF%A0%ED%8D%BC",
+    "new_car_url": "https://www.mini.co.kr/ko_KR/home/range/mini-cooper-3-door.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BF%A0%ED%8D%BC"
+  },
+  {
+    "manufacturer_name": "미니",
+    "vehicle_name": "쿠퍼 S",
+    "body_type": "해치백",
+    "car_description": "쿠퍼의 고성능 버전",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%AF%B8%EB%8B%88+%EC%BF%A0%ED%8D%BC+S",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BF%A0%ED%8D%BC+S"
+  },
+  {
+    "manufacturer_name": "미니",
+    "vehicle_name": "쿠퍼 SE",
+    "body_type": "해치백",
+    "car_description": "미니 순수 전기 모델",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%AF%B8%EB%8B%88+%EC%BF%A0%ED%8D%BC+SE",
+    "new_car_url": "https://www.mini.co.kr/ko_KR/home/range/all-electric-mini-cooper.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BF%A0%ED%8D%BC+SE"
+  },
+  {
+    "manufacturer_name": "미니",
+    "vehicle_name": "컨트리맨",
+    "body_type": "SUV",
+    "car_description": "미니 소형 SUV",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%EB%AF%B8%EB%8B%88+%EC%BB%A8%ED%8A%B8%EB%A6%AC%EB%A7%A8",
+    "new_car_url": "https://www.mini.co.kr/ko_KR/home/range/mini-countryman.html",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BB%A8%ED%8A%B8%EB%A6%AC%EB%A7%A8"
+  },
+  {
+    "manufacturer_name": "테슬라",
+    "vehicle_name": "Model 3",
+    "body_type": "세단",
+    "car_description": "테슬라 보급형 세단",
+    "vec_purpose": "출퇴근",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%85%8C%EC%8A%AC%EB%9D%BC+Model+3",
+    "new_car_url": "https://www.tesla.com/ko_kr/model3",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+Model+3"
+  },
+  {
+    "manufacturer_name": "테슬라",
+    "vehicle_name": "Model Y",
+    "body_type": "SUV",
+    "car_description": "국내 테슬라 판매 대부분 차지하는 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%85%8C%EC%8A%AC%EB%9D%BC+Model+Y",
+    "new_car_url": "https://www.tesla.com/ko_kr/modely",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+Model+Y"
+  },
+  {
+    "manufacturer_name": "테슬라",
+    "vehicle_name": "Model S",
+    "body_type": "세단",
+    "car_description": "테슬라 플래그십 세단",
+    "vec_purpose": "비즈니스",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%85%8C%EC%8A%AC%EB%9D%BC+Model+S",
+    "new_car_url": null,
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+Model+S"
+  },
+  {
+    "manufacturer_name": "테슬라",
+    "vehicle_name": "Model X",
+    "body_type": "SUV",
+    "car_description": "팰컨윙 도어의 플래그십 SUV",
+    "vec_purpose": "가족",
+    "car_img": "https://placehold.co/600x400.png?text=%ED%85%8C%EC%8A%AC%EB%9D%BC+Model+X",
+    "new_car_url": "https://www.tesla.com/ko_kr/modelx",
+    "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+Model+X"
+  }
+]
