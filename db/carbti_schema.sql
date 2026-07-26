@@ -91,3 +91,6 @@ CREATE TABLE `car_recommend` (
     FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle`(`vehicle_id`),
     FOREIGN KEY (`mbti_id`) REFERENCES `car_mbti`(`mbti_id`)
 );
+ALTER TABLE `vehicle`
+ADD COLUMN `new_car_url` VARCHAR(255) NULL AFTER `vec_purpose`,
+ADD COLUMN `used_car_url` VARCHAR(255) NULL AFTER `new_car_url`;
