@@ -1,17 +1,24 @@
 """
 db_config.py
 - 모든 crawler / Streamlit 앱이 공통으로 사용하는 DB 연결 + 스키마 자동 생성 모듈
-- .env 파일의 DB_HOST / DB_USERNAME / DB_PASSWORD / DB_DATABASE / DB_PORT 값을 사용
+- .env 파일의 HOST / PORT / USERNAME / PASSWORD / DB 값을 사용
 - host에 'tidbcloud.com'이 포함되어 있으면 자동으로 SSL을 켬 (TiDB Cloud 대응)
 - 테이블 정의는 이 파일에 중복해서 넣지 않고, db/carbti_schema.sql을 그대로 읽어서 실행함
   (스키마를 고칠 땐 carbti_schema.sql 한 곳만 고치면 됨)
 
-.env 예시:
-    DB_HOST=localhost
-    DB_USERNAME=root
-    DB_PASSWORD=1234
-    DB_DATABASE=carbti
-    DB_PORT=3306
+.env 예시 (TiDB Cloud):
+    HOST=gateway01.ap-northeast-1.prod.aws.tidbcloud.com
+    PORT=4000
+    USERNAME=xxxxxxxx.root
+    PASSWORD=your_password
+    DB=carbti
+
+.env 예시 (로컬 MySQL):
+    HOST=localhost
+    PORT=3306
+    USERNAME=root
+    PASSWORD=1234
+    DB=carbti
 
 Streamlit 앱에서 쓰는 법 (앱 진입점 맨 위에 한 번):
     import streamlit as st

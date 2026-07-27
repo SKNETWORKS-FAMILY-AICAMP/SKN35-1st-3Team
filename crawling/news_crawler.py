@@ -19,7 +19,7 @@ from email.utils import parsedate_to_datetime
 from dotenv import load_dotenv
 import pymysql
 
-load_dotenv("../.env")
+load_dotenv()
 
 NAVER_CLIENT_ID = os.getenv("NAVER_CLIENT_ID")
 NAVER_CLIENT_SECRET = os.getenv("NAVER_CLIENT_SECRET")
@@ -183,7 +183,7 @@ if __name__ == "__main__":
         time.sleep(0.5)
 
     # JSON 백업 저장
-    with open("../data/raw/vehicle_news.json", "w", encoding="utf-8") as f:
+    with open("data/raw/vehicle_news.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"\nJSON 백업 완료 -> ../data/raw/vehicle_news.json")
 
