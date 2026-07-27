@@ -175,9 +175,10 @@ if __name__ == "__main__":
         time.sleep(0.5)
 
     # JSON 백업 저장
-    with open("data/raw/vehicle_news.json", "w", encoding="utf-8") as f:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(script_dir, "..", "data", "raw", "vehicle_news.json")
+    with open(json_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-    print(f"\nJSON 백업 완료 -> ../data/raw/vehicle_news.json")
 
     # MySQL 저장
     conn = get_db_connection()
