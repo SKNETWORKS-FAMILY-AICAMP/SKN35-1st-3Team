@@ -193,14 +193,14 @@ QUESTION_PAGE_STYLE = """
   padding: 1rem 1.15rem;
   border: 1px solid color-mix(
     in srgb,
-    var(--st-primary-color, #FF4B4B) 32%,
+    var(--st-primary-color, #007BFF) 32%,
     var(--st-border-color, #D1D5DB)
   );
-  border-left: 5px solid var(--st-primary-color, #FF4B4B);
+  border-left: 5px solid var(--st-primary-color, #007BFF);
   border-radius: 14px;
   background: color-mix(
     in srgb,
-    var(--st-primary-color, #FF4B4B) 7%,
+    var(--st-primary-color, #007BFF) 7%,
     var(--st-background-color, #FFFFFF)
   );
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
@@ -975,17 +975,17 @@ def render_main_page():
 }
 div[data-testid="stButton"] > button[kind="primary"] {
   min-height: 3.7rem;
-  border: 2px solid #B8B8B8;
+  border: 2px solid #66B2FF;
   border-radius: 12px;
-  background: #454545;
+  background: #007BFF;
   color: #FFFFFF;
   font-size: 1.15rem;
   font-weight: 600;
-  box-shadow: none;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.24);
 }
 div[data-testid="stButton"] > button[kind="primary"]:hover {
-  border-color: #8F8F8F;
-  background: #353535;
+  border-color: #005FC7;
+  background: #0069D9;
   color: #FFFFFF;
 }
 .carbti-start-image-caption {
@@ -1129,8 +1129,8 @@ div[data-testid="stElementContainer"]:has(.carbti-sticky-progress) {{
   border-radius: inherit;
   background: linear-gradient(
     90deg,
-    var(--st-primary-color, #FF4B4B),
-    #F59E0B
+    var(--st-primary-color, #007BFF),
+    #59A9FF
   );
   transition: width 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }}
@@ -1525,7 +1525,7 @@ def build_result_image(user_mbti, mbti, recommendation):
         (rank_x, 915),
         rank_text,
         font=caption_font,
-        fill="#E85D35",
+        fill="#007BFF",
     )
 
     crown_x = rank_x + rank_box[2] + crown_gap
@@ -2052,7 +2052,7 @@ VEHICLE_DETAIL_STYLE = """
   white-space: nowrap;
 }
 .carbti-news-title:hover {
-  color: #1769aa;
+  color: #007BFF;
   text-decoration: underline;
 }
 .carbti-news-date {
