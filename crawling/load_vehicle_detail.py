@@ -5,17 +5,11 @@ load_vehicle_detail.py
 - vehicle_detail 테이블에 INSERT
 """
 
-import pymysql
 import json
 import re
+import os
 
-DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "1234",
-    "database": "carbti",
-    "charset": "utf8mb4",
-}
+from db_config import get_db_connection
 
 
 def load_json(path):
@@ -75,9 +69,11 @@ def insert_vehicle_detail(cur, vehicle_id, item):
 
 
 if __name__ == "__main__":
-    data = load_json("../data/raw/vehicle_detail.json")
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(script_dir, "..", "data", "raw", "vehicle_detail.json")
+    data = load_json(json_path)
 
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
 
     vehicle_id_map = get_vehicle_id_map(cur)

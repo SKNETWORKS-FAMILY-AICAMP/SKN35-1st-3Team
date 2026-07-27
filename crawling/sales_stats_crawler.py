@@ -1,14 +1,4 @@
-
-
-import pymysql
-
-DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "1234",
-    "database": "carbti",
-    "charset": "utf8mb4",
-}
+from db_config import get_db_connection
 
 # ── 판매실적 데이터 ──────────────────────────────
 sales_records = [
@@ -190,7 +180,7 @@ sales_records = [
 
 def get_vehicle_map():
     """(manufacturer_name, vehicle_name) -> vehicle_id 매핑 반환"""
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute(
         """
@@ -212,7 +202,7 @@ def get_estimated_price_map():
     (실거래가 공식 통계가 없어서 카탈로그 가격 기준 추정치로 대신함)
     트림 정보가 하나도 없는 vehicle_id는 매핑에서 빠짐(그 경우 sales_avg_price는 NULL로 남음).
     """
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute(
         """
@@ -232,7 +222,7 @@ def insert_sales_stats(records):
     vehicle_map = get_vehicle_map()
     price_map = get_estimated_price_map()
 
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
 
     # 이미 들어가있는 (vehicle_id, year, month) 조합 조회 -> 중복 방지

@@ -16,3 +16,6 @@ dependencies = [
     "selenium>=4.46.0",
     "streamlit>=1.60.0",
 ]
+
+[tool.poetry]
+package-mode = false

@@ -3,7 +3,7 @@ car_mbti_crawler.py
 - car_mbti 테이블(16가지 Carbti 유형)을 정리하고 MySQL DB에 저장하는 스크립트
 """
 
-import pymysql
+from db_config import get_db_connection
 
 # ------------------------------------------------------------
 # 1. Carbti 16유형 데이터
@@ -75,21 +75,9 @@ car_mbti_seed = [
 ]
 
 
-# ------------------------------------------------------------
-# 2. MySQL 연결 설정
-# ------------------------------------------------------------
-DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "1234",
-    "database": "carbti",
-    "charset": "utf8mb4",
-}
-
-
 def insert_car_mbti(data):
- 
-    conn = pymysql.connect(**DB_CONFIG)
+
+    conn = get_db_connection()
     cur = conn.cursor()
 
     sql = """
@@ -114,8 +102,5 @@ def insert_car_mbti(data):
     print(f"\n총 {len(data)}개 Carbti 유형 저장 완료")
 
 
-# ------------------------------------------------------------
-# 3. 실행부
-# ------------------------------------------------------------
 if __name__ == "__main__":
     insert_car_mbti(car_mbti_seed)

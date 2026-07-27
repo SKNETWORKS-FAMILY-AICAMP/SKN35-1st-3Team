@@ -14,23 +14,15 @@ import json
 import time
 import re
 import os
-from datetime import datetime
 from email.utils import parsedate_to_datetime
 from dotenv import load_dotenv
-import pymysql
+
+from db_config import get_db_connection
 
 load_dotenv()
 
 NAVER_CLIENT_ID = os.getenv("NAVER_CLIENT_ID")
 NAVER_CLIENT_SECRET = os.getenv("NAVER_CLIENT_SECRET")
-
-DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "1234",
-    "database": "carbti",
-    "charset": "utf8mb4",
-}
 
 VEHICLE_LIST = {
     "ISTJ": "아반떼",
@@ -188,7 +180,7 @@ if __name__ == "__main__":
     print(f"\nJSON 백업 완료 -> ../data/raw/vehicle_news.json")
 
     # MySQL 저장
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
     vehicle_id_map = get_vehicle_id_map(cur)
 

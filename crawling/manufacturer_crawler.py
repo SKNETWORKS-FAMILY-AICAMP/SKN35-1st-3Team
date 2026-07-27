@@ -3,7 +3,7 @@ manufacturer_crawler.py
 - manufacturer 테이블에 들어갈 데이터를 정리하고 MySQL DB에 저장하는 스크립트
 """
 
-import pymysql
+from db_config import get_db_connection
 
 manufacturers_seed = [
     {
@@ -63,7 +63,7 @@ manufacturers_seed = [
     {
         "manufacturer_name": "폭스바겐",
         "country": "독일",
-        "official_url": "https://www.vw.co.kr/",
+        "official_url": "https://www.volkswagen.co.kr/ko.html",
         "logo_url": None,
     },
     {
@@ -111,17 +111,8 @@ manufacturers_seed = [
 ]
 
 
-DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "1234",
-    "database": "carbti",
-    "charset": "utf8mb4",
-}
-
-
 def insert_manufacturers(data):
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
 
     sql = """

@@ -5,15 +5,7 @@ car_recommend_crawler.py
 - vehicle_id는 (manufacturer_name, vehicle_name)으로 vehicle 테이블에서 조회해서 채움
 """
 
-import pymysql
-
-DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "1234",
-    "database": "carbti",
-    "charset": "utf8mb4",
-}
+from db_config import get_db_connection
 
 # ------------------------------------------------------------
 # 1. 인화님 PPT 'Project_carbti_design_2' 슬라이드 9~24 기준 1/2/3위 조합
@@ -44,7 +36,7 @@ car_recommend_seed = {
 # ------------------------------------------------------------
 def get_vehicle_map():
     """(manufacturer_name, vehicle_name) -> {vehicle_id, car_description} 매핑 반환"""
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute(
         """
@@ -64,7 +56,7 @@ def get_vehicle_map():
 
 def get_mbti_description_map():
     """mbti_id -> mbti_description 매핑 반환 (1위 추천 이유로 재사용)"""
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute("SELECT mbti_id, mbti_description FROM car_mbti")
     rows = cur.fetchall()
@@ -80,7 +72,7 @@ def insert_car_recommend(seed):
     vehicle_map = get_vehicle_map()
     mbti_desc_map = get_mbti_description_map()
 
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
 
     # 이미 들어가있는 (mbti_id, recom_car_rank) 조합 조회 -> 중복 방지

@@ -1,5 +1,7 @@
 import pymysql
 
+from db_config import get_db_connection
+
 vehicle_seed = [
     # ── 현대자동차 (14) ──────────────────────────────
     {"manufacturer_name": "현대자동차", "vehicle_name": "캐스퍼", "body_type": "경차", "car_description": "가성비 좋은 경형 SUV, 짧은 출퇴근에 적합", "vec_purpose": "출퇴근", "car_img": "https://m.casper.hyundai.com/wcontents/attach-1/2021/08/016/movie/main.png", "new_car_url": "https://casper.hyundai.com/", "used_car_url": "https://www.google.com/search?q=site%3Aauto.danawa.com%2Fusedcar+%EC%BA%90%EC%8A%A4%ED%8D%BC"},
@@ -172,19 +174,9 @@ vehicle_seed = [
 ]
 
 
-DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "1234",
-    "database": "carbti",
-    "charset": "utf8mb4",
-    "client_flag": pymysql.constants.CLIENT.FOUND_ROWS,  # UPDATE 시 rowcount가 "변경된 행"이 아니라 "매칭된 행"을 반환하도록 함
-}
-
-
 def get_manufacturer_map():
     """manufacturer 테이블을 조회해 {"현대자동차": 1, ...} 형태로 매핑 반환"""
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute("SELECT manufacturer_id, manufacturer_name FROM manufacturer")
     rows = cur.fetchall()
@@ -196,7 +188,7 @@ def get_manufacturer_map():
 def insert_vehicles(data):
     manufacturer_map = get_manufacturer_map()
 
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
 
     # 이미 DB에 있는 (vehicle_name, manufacturer_id) 조합을 미리 조회해서 중복 방지
@@ -253,7 +245,8 @@ def update_vehicle_urls(data):
     """
     manufacturer_map = get_manufacturer_map()
 
-    conn = pymysql.connect(**DB_CONFIG)
+    # UPDATE 시 rowcount가 "변경된 행"이 아니라 "매칭된 행"을 반환하도록 함
+    conn = get_db_connection(client_flag=pymysql.constants.CLIENT.FOUND_ROWS)
     cur = conn.cursor()
 
     sql = """
@@ -381,7 +374,7 @@ def check_vehicle_data():
     - car_img가 아직 placehold.co인 개수
     - 샘플 몇 개(니로, 쏘렌토, G70, GR86, ES)의 car_img 값
     """
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
 
     cur.execute("SELECT COUNT(*) FROM vehicle")

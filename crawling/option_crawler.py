@@ -3,7 +3,7 @@ option_crawler.py
 - option 테이블에 들어갈 옵션 마스터 데이터를 정리하고 MySQL DB에 저장하는 스크립트
 """
 
-import pymysql
+from db_config import get_db_connection
 
 # ------------------------------------------------------------
 # 1. 옵션 데이터 (카테고리별로 표준화해서 직접 정리)
@@ -48,21 +48,9 @@ options_seed = [
 ]
 
 
-# ------------------------------------------------------------
-# 2. MySQL 연결 설정 (manufacturer_crawler.py와 동일하게 맞추기)
-# ------------------------------------------------------------
-DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "본인_비밀번호_입력",
-    "database": "carbti",
-    "charset": "utf8mb4",
-}
-
-
 def insert_options(data):
     """option 리스트를 DB에 저장하는 함수"""
-    conn = pymysql.connect(**DB_CONFIG)
+    conn = get_db_connection()
     cur = conn.cursor()
 
     sql = """
@@ -80,8 +68,5 @@ def insert_options(data):
     print(f"\n총 {len(data)}개 옵션 저장 완료")
 
 
-# ------------------------------------------------------------
-# 3. 실행부
-# ------------------------------------------------------------
 if __name__ == "__main__":
     insert_options(options_seed)
