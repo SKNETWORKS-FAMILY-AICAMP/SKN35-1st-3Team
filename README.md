@@ -30,7 +30,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 이름 | _조현주_ | _고태민_ | _권준호_ | _장인화_ | _정진_ |
 | 역할 | _(예: 팀장 / DB 설계)_ | _(예: 크롤링)_ | _(예: 프론트엔드)_ | _(예: 백엔드)_ | _(예: 데이터 분석)_ |
-| GitHub | [@](https://github.com/) | [@]([https://github.com/](https://github.com/taemin1997)) | [@](https://github.com/) | [@](https://github.com/) | [@](https://github.com/) |
+| GitHub | [@](https://github.com/) | [@](https://github.com/taemin1997)) | [@](https://github.com/) | [@](https://github.com/) | [@](https://github.com/) |
 
 > ✏️ 실제 팀원 정보로 표를 채워주세요.
 
