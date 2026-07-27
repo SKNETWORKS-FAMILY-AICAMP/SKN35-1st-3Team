@@ -4,12 +4,48 @@ load_vehicle_detail.py
 - vehicle 테이블에서 이름으로 vehicle_id를 찾은 뒤
 - vehicle_detail 테이블에 INSERT
 """
-
 import json
 import re
 import os
-
 from db_config import get_db_connection
+
+SEAT_COUNT_MAP = {
+    "아반떼": 5,
+    "E클래스": 5,
+    "G80": 5,
+    "XC60": 5,
+    "카이엔": 5,
+    "ES": 5,
+    "티구안": 5,
+    "아이오닉5": 5,
+    "GV70": 5,
+    "쿠퍼": 4,
+    "레이": 5,
+    "Model Y": 5,
+    "그랜저": 5,
+    "쏘렌토": 5,
+    "카니발": 7,
+    "5시리즈": 5,
+}
+
+DRIVE_TYPE_MAP = {
+    "아반떼": "전륜구동",
+    "E클래스": "후륜구동",
+    "G80": "후륜구동",
+    "XC60": "AWD",
+    "카이엔": "AWD",
+    "ES": "전륜구동",
+    "티구안": "전륜구동",
+    "아이오닉5": "후륜구동",
+    "GV70": "후륜구동",
+    "쿠퍼": "전륜구동",
+    "레이": "전륜구동",
+    "Model Y": "후륜구동",
+    "그랜저": "전륜구동",
+    "쏘렌토": "전륜구동",
+    "카니발": "전륜구동",
+    "5시리즈": "후륜구동",
+}
 
 
 def load_json(path):
@@ -36,32 +72,22 @@ def parse_float(value):
     return float(match.group()) if match else None
 
 
-def normalize_transmission(value):
-    if value is None:
-        return None
-    if "CVT" in value:
-        return "CVT"
-    if "DCT" in value:
-        return "DCT"
-    if "수동" in value:
-        return "manual"
-    return "auto"
-
-
-def insert_vehicle_detail(cur, vehicle_id, item):
+def insert_vehicle_detail(cur, vehicle_id, vehicle_name, item):
     sql = """
         INSERT INTO vehicle_detail
         (detail_trim_name, detail_fuel_type, detail_displacement,
-         detail_horsepower, detail_transmission, detail_base_price,
-         detail_fuel_efficiency, vehicle_id)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+         detail_horsepower, detail_transmission, detail_drive_type,
+         detail_seat_count, detail_base_price, detail_fuel_efficiency, vehicle_id)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
     cur.execute(sql, (
         item.get("trim_name"),
         item.get("fuel_type"),
         parse_int(item.get("displacement")),
         parse_int(item.get("horsepower")),
-        normalize_transmission(item.get("transmission")),
+        item.get("transmission"),  # 원본 값 그대로 (check 제약조건 없음 확인됨)
+        DRIVE_TYPE_MAP.get(vehicle_name),
+        SEAT_COUNT_MAP.get(vehicle_name),
         item.get("base_price"),
         parse_float(item.get("fuel_efficiency")),
         vehicle_id,
@@ -80,15 +106,16 @@ if __name__ == "__main__":
 
     success, skipped = 0, []
     for item in data:
-        vehicle_id = vehicle_id_map.get(item["vehicle_name"])
+        vehicle_name = item["vehicle_name"]
+        vehicle_id = vehicle_id_map.get(vehicle_name)
         if vehicle_id is None:
-            skipped.append(item["vehicle_name"])
+            skipped.append(vehicle_name)
             continue
         try:
-            insert_vehicle_detail(cur, vehicle_id, item)
+            insert_vehicle_detail(cur, vehicle_id, vehicle_name, item)
             success += 1
         except Exception as e:
-            print(f"[실패] {item['vehicle_name']}: {e}")
+            print(f"[실패] {vehicle_name}: {e}")
 
     conn.commit()
     cur.close()
