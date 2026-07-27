@@ -38,3 +38,4 @@ vehicle_seed_filled.json
 
 .streamlit/*
 !.streamlit/secrets.toml.example
+app.py
