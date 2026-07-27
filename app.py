@@ -1068,11 +1068,7 @@ def render_question_page():
 
     render_scroll_to_top_if_requested()
 
-<<<<<<< HEAD
     questions_per_page = 4
-=======
-    questions_per_page = 5
->>>>>>> f0dd90426a6075b7ba4964e8a481a3489a77be64
 
     # 현재 페이지에서 시작할 질문 위치입니다.
     # 0, 5, 10, 15 순서로 이동합니다.
