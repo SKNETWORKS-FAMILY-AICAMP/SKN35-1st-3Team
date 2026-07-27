@@ -118,7 +118,6 @@ uv run streamlit run app.py
 
 ```bash
 uv sync --frozen --extra mysql      # MySQL / MariaDB
-uv sync --frozen --extra postgres   # PostgreSQL
 uv sync --frozen                    # SQLite (기본)
 ```
 
