@@ -159,8 +159,65 @@ QUESTIONS = [{'id': 1,
                'scores': {'P': 1}}]},
  {'id': 20,
   'text': '조수석에 탄 친구가 갑자기 "우리 원래 가려던 곳 말고, 바다 보러 핸들 꺾을까?"라고 한다면?',
-  'choices': [{'text': '원래 계획했던 맛집 예약이나 일정이 꼬여서 속으로 살짝 스트레스를 받거나 당황한다', 'scores': {'J': 1}},
+ 'choices': [{'text': '원래 계획했던 맛집 예약이나 일정이 꼬여서 속으로 살짝 스트레스를 받거나 당황한다', 'scores': {'J': 1}},
               {'text': '"오 완전 대박! 콜!"을 외치며 신나게 경로를 변경해 새로운 드라이브를 즐긴다', 'scores': {'P': 1}}]}]
+
+
+QUESTION_PAGE_INTROS = {
+    1: (
+        "차는 이동수단이지만 당신이 오랜 시간을 보내는 "
+        "아늑한 공간이기도 합니다.",
+        "차는 당신에게 어떤 공간일까요?",
+    ),
+    6: (
+        "차의 기술력에 대해 평소 관심이 있으셨나요?",
+    ),
+    11: (
+        "차는 아름다워야한다?! Or 차는 잘 움직여야지?!",
+    ),
+    16: (
+        "자동차 관리법은 어떠세요?",
+    ),
+}
+
+QUESTION_PAGE_STYLE = """
+<style>
+.carbti-question-intro {
+  margin: 1rem 0 1.25rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--st-primary-color, #FF4B4B) 32%,
+    var(--st-border-color, #D1D5DB)
+  );
+  border-left: 5px solid var(--st-primary-color, #FF4B4B);
+  border-radius: 14px;
+  background: color-mix(
+    in srgb,
+    var(--st-primary-color, #FF4B4B) 7%,
+    var(--st-background-color, #FFFFFF)
+  );
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
+}
+.carbti-question-intro p {
+  margin: 0;
+  color: var(--st-text-color);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.carbti-question-intro p + p {
+  margin-top: 0.35rem;
+}
+.carbti-question-title {
+  margin: 0.8rem 0 0.55rem;
+  color: var(--st-heading-color, var(--st-text-color));
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+</style>
+"""
 
 
 
@@ -457,16 +514,32 @@ ORDER BY sales_year, sales_month
 
 VEHICLE_NEWS_QUERY = """
 SELECT
-    news_id,
-    title,
-    summary,
-    news_url,
-    news_img,
-    news_category,
-    publish_date
-FROM news
-WHERE vehicle_id = %(vehicle_id)s
-ORDER BY publish_date DESC, news_id DESC
+    n.news_id,
+    n.title,
+    n.summary,
+    n.news_url,
+    n.news_img,
+    n.news_category,
+    n.publish_date
+FROM news AS n
+JOIN vehicle AS news_vehicle
+    ON news_vehicle.vehicle_id = n.vehicle_id
+JOIN vehicle AS selected_vehicle
+    ON selected_vehicle.vehicle_id = %(vehicle_id)s
+WHERE n.vehicle_id = %(vehicle_id)s
+   OR (
+        NOT EXISTS (
+            SELECT 1
+            FROM news AS exact_news
+            WHERE exact_news.vehicle_id = %(vehicle_id)s
+        )
+        AND news_vehicle.manufacturer_id = selected_vehicle.manufacturer_id
+   )
+ORDER BY
+    CASE WHEN n.vehicle_id = %(vehicle_id)s THEN 0 ELSE 1 END,
+    n.publish_date DESC,
+    n.news_id DESC
+LIMIT 3
 """
 
 VEHICLE_RECOMMEND_REASON_QUERY = """
@@ -777,12 +850,57 @@ def change_page(page_name):
 
     # 다음에 표시할 페이지 이름을 저장합니다.
     st.session_state.page = page_name
+    if page_name in {"question", "result"}:
+        st.session_state.scroll_to_page_top = True
 
     # Streamlit 파일 전체를 즉시 다시 실행합니다.
     #
     # 다시 실행되면 메인 라우터가 session_state.page를 확인하고
     # 변경된 페이지 함수를 호출합니다.
     st.rerun()
+
+
+def render_scroll_to_top_if_requested():
+    """페이지 전환 직후 Streamlit의 스크롤 영역을 최상단으로 이동합니다."""
+
+    if not st.session_state.pop("scroll_to_page_top", False):
+        return
+
+    st.components.v1.html(
+        """
+<script>
+(() => {
+  const scrollPageTop = () => {
+    const doc = window.parent.document;
+    const containers = [
+      doc.querySelector('[data-testid="stMain"]'),
+      doc.querySelector('section.main'),
+      doc.querySelector('[data-testid="stAppViewContainer"]'),
+      doc.scrollingElement,
+      doc.documentElement,
+      doc.body,
+    ];
+
+    containers.forEach((container) => {
+      if (!container) return;
+      if (typeof container.scrollTo === "function") {
+        container.scrollTo({top: 0, left: 0, behavior: "auto"});
+      }
+      container.scrollTop = 0;
+    });
+    window.parent.scrollTo({top: 0, left: 0, behavior: "auto"});
+  };
+
+  scrollPageTop();
+  window.parent.requestAnimationFrame(scrollPageTop);
+  window.parent.setTimeout(scrollPageTop, 80);
+  window.parent.setTimeout(scrollPageTop, 240);
+})();
+</script>
+""",
+        height=0,
+        width=0,
+    )
 
 
 def reset_test():
@@ -827,8 +945,6 @@ def render_main_page():
         "가장 가까운 성향 유형을 순서대로 보여줍니다."
     )
 
-    # QUESTIONS 리스트 길이를 이용해 전체 질문 수를 표시합니다.
-    st.info(f"전체 질문 수: {len(QUESTIONS)}개")
 
     # 버튼을 누르면 질문 화면으로 이동합니다.
     if st.button(
@@ -876,7 +992,7 @@ div[data-testid="stElementContainer"]:has(.carbti-sticky-progress) {{
 }}
 .carbti-progress-labels {{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
   color: var(--st-text-color);
   font-size: 0.82rem;
@@ -935,7 +1051,6 @@ div[data-testid="stElementContainer"]:has(.carbti-sticky-progress) {{
 >
   <div class="carbti-progress-labels">
     <span>질문 {start_question}~{end_question} / {total_questions}</span>
-    <span>{percentage:.0f}%</span>
   </div>
   <div class="carbti-progress-rail">
     <span class="carbti-progress-car" role="img" aria-label="진행 중인 차량">🚙</span>
@@ -949,12 +1064,14 @@ div[data-testid="stElementContainer"]:has(.carbti-sticky-progress) {{
 
 
 def render_question_page():
-    """질문을 한 페이지에 4개씩 표시합니다."""
+    """질문을 한 페이지에 5개씩 표시합니다."""
 
-    questions_per_page = 4
+    render_scroll_to_top_if_requested()
+
+    questions_per_page = 5
 
     # 현재 페이지에서 시작할 질문 위치입니다.
-    # 0, 4, 8, 12, 16 순서로 이동합니다.
+    # 0, 5, 10, 15 순서로 이동합니다.
     current_index = st.session_state.question_index
     total_questions = len(QUESTIONS)
 
@@ -981,11 +1098,31 @@ def render_question_page():
         total_questions=total_questions,
     )
 
+    intro_lines = QUESTION_PAGE_INTROS.get(
+        page_questions[0]["id"],
+        (),
+    )
+    if intro_lines:
+        intro_html = "".join(
+            f"<p>{html.escape(line)}</p>"
+            for line in intro_lines
+        )
+        st.html(
+            QUESTION_PAGE_STYLE
+            + '<section class="carbti-question-intro">'
+            + intro_html
+            + "</section>"
+        )
+
     # 현재 화면에서 선택한 답변을 임시 저장합니다.
     selected_answers = {}
 
     for question in page_questions:
-        st.subheader(question["text"])
+        st.html(
+            '<h3 class="carbti-question-title">'
+            + html.escape(question["text"])
+            + "</h3>"
+        )
 
         choice_texts = [
             choice["text"]
@@ -1035,9 +1172,10 @@ def render_question_page():
                     0,
                     current_index - questions_per_page,
                 )
+                st.session_state.scroll_to_page_top = True
                 st.rerun()
 
-    # 현재 페이지의 네 질문에 모두 답했는지 확인합니다.
+    # 현재 페이지의 다섯 질문에 모두 답했는지 확인합니다.
     has_unanswered_question = any(
         answer_index is None
         for answer_index in selected_answers.values()
@@ -1061,8 +1199,9 @@ def render_question_page():
                     answer_index
                 )
 
-            # 다음 네 질문으로 이동합니다.
+            # 다음 다섯 질문으로 이동합니다.
             st.session_state.question_index = page_end
+            st.session_state.scroll_to_page_top = True
             st.rerun()
 
 # %%
@@ -1212,20 +1351,58 @@ def build_result_image(user_mbti, mbti, recommendation):
     caption_font = get_result_font(25)
 
     draw.rounded_rectangle((60, 55, 1140, 1445), radius=36, fill="white")
-    draw.text((110, 105), "나의 CarBTI", font=caption_font, fill="#6B7280")
-    draw.text((110, 155), mbti["mbti_name"], font=title_font, fill="#111827")
-    draw.text((110, 240), user_mbti, font=heading_font, fill="#E85D35")
+    # draw.text((110, 105), "나의 CarBTI", font=caption_font, fill="#6B7280")
+    draw.text(
+        (600, 155),
+        mbti["mbti_name"],
+        font=title_font,
+        fill="#111827",
+        anchor="mt",
+    )
+    # draw.text((110, 240), user_mbti, font=heading_font, fill="#E85D35")
 
     image_box = (110, 330, 1090, 865)
     vehicle_image_bytes = download_vehicle_image(recommendation["car_img"])
     if vehicle_image_bytes:
         try:
-            vehicle_image = Image.open(BytesIO(vehicle_image_bytes)).convert("RGB")
-            vehicle_image = ImageOps.fit(
+            vehicle_image = Image.open(BytesIO(vehicle_image_bytes))
+            vehicle_image.load()
+
+            if (
+                "A" in vehicle_image.getbands()
+                or "transparency" in vehicle_image.info
+            ):
+                rgba_image = vehicle_image.convert("RGBA")
+                white_background = Image.new(
+                    "RGBA",
+                    rgba_image.size,
+                    (255, 255, 255, 255),
+                )
+                white_background.alpha_composite(rgba_image)
+                vehicle_image = white_background.convert("RGB")
+            else:
+                vehicle_image = vehicle_image.convert("RGB")
+
+            image_box_width = image_box[2] - image_box[0]
+            image_box_height = image_box[3] - image_box[1]
+            image_padding = 24
+            vehicle_image = ImageOps.contain(
                 vehicle_image,
-                (image_box[2] - image_box[0], image_box[3] - image_box[1]),
+                (
+                    image_box_width - image_padding * 2,
+                    image_box_height - image_padding * 2,
+                ),
+                method=Image.Resampling.LANCZOS,
             )
-            canvas.paste(vehicle_image, image_box[:2])
+            image_x = (
+                image_box[0]
+                + (image_box_width - vehicle_image.width) // 2
+            )
+            image_y = (
+                image_box[1]
+                + (image_box_height - vehicle_image.height) // 2
+            )
+            canvas.paste(vehicle_image, (image_x, image_y))
         except Exception:
             draw.rounded_rectangle(image_box, radius=24, fill="#E5E7EB")
     else:
@@ -1237,8 +1414,49 @@ def build_result_image(user_mbti, mbti, recommendation):
         + " "
         + recommendation["vehicle_name"]
     ).strip()
-    draw.text((110, 915), "추천 1위", font=caption_font, fill="#E85D35")
-    draw.text((110, 965), vehicle_name, font=heading_font, fill="#111827")
+
+    rank_text = "추천 1위"
+    rank_box = draw.textbbox((0, 0), rank_text, font=caption_font)
+    rank_width = rank_box[2] - rank_box[0]
+    crown_width = 30
+    crown_gap = 10
+    rank_group_width = rank_width + crown_gap + crown_width
+    rank_x = 600 - rank_group_width // 2 - rank_box[0]
+    draw.text(
+        (rank_x, 915),
+        rank_text,
+        font=caption_font,
+        fill="#E85D35",
+    )
+
+    crown_x = rank_x + rank_box[2] + crown_gap
+    crown_y = 916
+    draw.polygon(
+        [
+            (crown_x, crown_y + 21),
+            (crown_x + 3, crown_y + 5),
+            (crown_x + 10, crown_y + 14),
+            (crown_x + 15, crown_y),
+            (crown_x + 20, crown_y + 14),
+            (crown_x + 27, crown_y + 5),
+            (crown_x + 30, crown_y + 21),
+        ],
+        fill="#FBBF24",
+        outline="#D97706",
+    )
+    draw.rectangle(
+        (crown_x, crown_y + 20, crown_x + 30, crown_y + 25),
+        fill="#F59E0B",
+        outline="#D97706",
+    )
+
+    draw.text(
+        (600, 965),
+        vehicle_name,
+        font=heading_font,
+        fill="#111827",
+        anchor="mt",
+    )
     y = draw_wrapped_text(
         draw,
         mbti["mbti_description"],
@@ -1537,7 +1755,6 @@ def render_vehicle_card(
         )
         featured_header = f"""
   <div class="carbti-result-header">
-    <span class="carbti-result-rank">추천 1위 · {html.escape(user_mbti)}</span>
     <h2 class="carbti-result-name">
       {html.escape(str(mbti.get("mbti_name") or ""))}
     </h2>
@@ -1566,7 +1783,7 @@ def render_vehicle_card(
       </span>
     </div>
     <span class="carbti-vehicle-action">
-      카드를 누르면 뒤집히며 차량 상세페이지로 이동합니다 →
+      카드를 누르면 차량 상세페이지로 이동합니다 →
     </span>
   </div>
 {closing_tag}
@@ -1576,6 +1793,8 @@ def render_vehicle_card(
 
 def render_result_page():
     """CarBTI 설명과 추천 점수 결과에 따른 차량 순위를 표시합니다."""
+
+    render_scroll_to_top_if_requested()
 
     user_mbti = st.session_state.user_mbti
     if not user_mbti:
@@ -1817,9 +2036,6 @@ def render_vehicle_detail_page():
     image_column, info_column = st.columns([0.95, 1.25], gap="large")
 
     with image_column:
-        st.markdown(
-            f"#### {display_text(vehicle['vehicle_name'], '차량 이미지')}"
-        )
         detail_image_url = str(
             vehicle["car_img"] or TEST_IMAGE_DATA_URI
         )
