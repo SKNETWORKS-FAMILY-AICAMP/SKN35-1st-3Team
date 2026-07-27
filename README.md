@@ -2,13 +2,7 @@
 
 > "나에게 꼭 맞는 차는 뭘까?" MBTI처럼 몇 가지 질문에 답하면, 성향 유형을 계산해 어울리는 차량을 추천해주는 Streamlit 웹 애플리케이션입니다.
 
-<p>
-  <img src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/Streamlit-1.60+-FF4B4B?logo=streamlit&logoColor=white">
-  <img src="https://img.shields.io/badge/MySQL-MariaDB-4479A1?logo=mysql&logoColor=white">
-  <img src="https://img.shields.io/badge/uv-package%20manager-DE5FE9">
-  <img src="https://img.shields.io/badge/Selenium-crawling-43B02A?logo=selenium&logoColor=white">
-</p>
+<p> <img src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white"> <img src="https://img.shields.io/badge/Streamlit-1.60+-FF4B4B?logo=streamlit&logoColor=white"> <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white"> <img src="https://img.shields.io/badge/uv-package%20manager-DE5FE9"> <img src="https://img.shields.io/badge/Selenium-crawling-43B02A?logo=selenium&logoColor=white"> </p>
 
 ---
 
@@ -40,7 +34,7 @@
 | --- | --- |
 | Language | ![Python](https://img.shields.io/badge/Python%203.12-3776AB?logo=python&logoColor=white) |
 | Frontend / App | ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white) |
-| Database | ![MySQL](https://img.shields.io/badge/MySQL%2FMariaDB-4479A1?logo=mysql&logoColor=white) ![PyMySQL](https://img.shields.io/badge/PyMySQL-4479A1?logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white) |
+| Database | ![MySQL](https://img.shields.io/badge/MySQL%2FMariaDB-4479A1?logo=mysql&logoColor=white) ![PyMySQL](https://img.shields.io/badge/PyMySQL-4479A1?logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white) |
 | Crawling | ![Selenium](https://img.shields.io/badge/Selenium-43B02A?logo=selenium&logoColor=white) ![BeautifulSoup4](https://img.shields.io/badge/BeautifulSoup4-4B8BBE?logoColor=white) ![Requests](https://img.shields.io/badge/Requests-2E7D32?logoColor=white) |
 | Data Handling | ![pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white) ![Pillow](https://img.shields.io/badge/Pillow-3776AB?logoColor=white) |
 | 환경/패키지 관리 | ![uv](https://img.shields.io/badge/uv-DE5FE9?logoColor=white) ![python-dotenv](https://img.shields.io/badge/python--dotenv-ECD53F?logoColor=black) |
