@@ -22,9 +22,16 @@
 
 |  | 팀원 1 | 팀원 2 | 팀원 3 | 팀원 4 | 팀원 5 |
 | --- | --- | --- | --- | --- | --- |
+<<<<<<< HEAD
 | 이름 | _조현주_ | _고태민_ | _권준호_ | _장인화_ | _정진봉_ |
 | 역할 | _(예: 팀장 / DB 설계)_ | _(예: 크롤링)_ | _(예: 프론트엔드)_ | _(예: 백엔드)_ | _(예: 데이터 분석)_ |
 | GitHub | [@](https://github.com/) | [@taemin1997](https://github.com/taemin1997) | [@Junho7-Kweon](https://github.com/Junho7-Kweon) | [@](https://github.com/) | [@](https://github.com/) |
+=======
+| 사진 | <img src="./images/레드.png" width="80"> | <img src="./images/블루.png" width="80"> | <img src="./images/그린.png" width="80"> | <img src="./images/옐로.png" width="80"> | <img src="./images/핑크.png" width="80"> |
+| 이름 | _조현주_ | _고태민_ | _권준호_ | _장인화_ | _정진봉_ |
+| 역할 | _(예: 팀장 / DB 설계)_ | _(예: 크롤링)_ | _(예: 프론트엔드)_ | _(예: 백엔드)_ | _(예: 데이터 분석)_ |
+| GitHub | [@zozuzu](https://github.com/zozuzu) | [@taemin1997](https://github.com/taemin1997) | [@Junho7-Kweon](https://github.com/Junho7-Kweon) | [@inaskn35 ](https://github.com/) | [@rupria](https://github.com/) |
+>>>>>>> f0dd90426a6075b7ba4964e8a481a3489a77be64
 
 > ✏️ 실제 팀원 정보로 표를 채워주세요.
 
@@ -79,7 +86,11 @@ mini_project1/
 
 ## 🗄️ ERD
 
+<<<<<<< HEAD
 ![CARbti ERD](./CARbti_ERD.png)
+=======
+![CARbti ERD](./images/CARbti_ERD.png)
+>>>>>>> f0dd90426a6075b7ba4964e8a481a3489a77be64
 
 `car_mbti`(성향 유형) — `car_recommend` — `vehicle` — `vehicle_detail` — `vehicle_option` — `option` 이 서로 연결되고, `vehicle`은 `manufacturer`, `news`, `sales_stat`과도 연관됩니다.
 
@@ -144,4 +155,8 @@ url = "mysql+pymysql://username:password@host:3306/database"
 
 ## 🔗 관련 이슈 / 개선 내역
 
+<<<<<<< HEAD
 - [ ] _(이슈/개선 사항을 입력해주세요)_
+=======
+- [ ] _(이슈/개선 사항을 입력해주세요)_
+>>>>>>> f0dd90426a6075b7ba4964e8a481a3489a77be64

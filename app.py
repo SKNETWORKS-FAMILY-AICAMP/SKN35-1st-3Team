@@ -159,8 +159,65 @@ QUESTIONS = [{'id': 1,
                'scores': {'P': 1}}]},
  {'id': 20,
   'text': '조수석에 탄 친구가 갑자기 "우리 원래 가려던 곳 말고, 바다 보러 핸들 꺾을까?"라고 한다면?',
-  'choices': [{'text': '원래 계획했던 맛집 예약이나 일정이 꼬여서 속으로 살짝 스트레스를 받거나 당황한다', 'scores': {'J': 1}},
+ 'choices': [{'text': '원래 계획했던 맛집 예약이나 일정이 꼬여서 속으로 살짝 스트레스를 받거나 당황한다', 'scores': {'J': 1}},
               {'text': '"오 완전 대박! 콜!"을 외치며 신나게 경로를 변경해 새로운 드라이브를 즐긴다', 'scores': {'P': 1}}]}]
+
+
+QUESTION_PAGE_INTROS = {
+    1: (
+        "차는 이동수단이지만 당신이 오랜 시간을 보내는 "
+        "아늑한 공간이기도 합니다.",
+        "차는 당신에게 어떤 공간일까요?",
+    ),
+    6: (
+        "차의 기술력에 대해 평소 관심이 있으셨나요?",
+    ),
+    11: (
+        "차는 아름다워야한다?! Or 차는 잘 움직여야지?!",
+    ),
+    16: (
+        "자동차 관리법은 어떠세요?",
+    ),
+}
+
+QUESTION_PAGE_STYLE = """
+<style>
+.carbti-question-intro {
+  margin: 1rem 0 1.25rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--st-primary-color, #FF4B4B) 32%,
+    var(--st-border-color, #D1D5DB)
+  );
+  border-left: 5px solid var(--st-primary-color, #FF4B4B);
+  border-radius: 14px;
+  background: color-mix(
+    in srgb,
+    var(--st-primary-color, #FF4B4B) 7%,
+    var(--st-background-color, #FFFFFF)
+  );
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
+}
+.carbti-question-intro p {
+  margin: 0;
+  color: var(--st-text-color);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.carbti-question-intro p + p {
+  margin-top: 0.35rem;
+}
+.carbti-question-title {
+  margin: 0.8rem 0 0.55rem;
+  color: var(--st-heading-color, var(--st-text-color));
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+</style>
+"""
 
 
 
@@ -888,8 +945,6 @@ def render_main_page():
         "가장 가까운 성향 유형을 순서대로 보여줍니다."
     )
 
-    # QUESTIONS 리스트 길이를 이용해 전체 질문 수를 표시합니다.
-    st.info(f"전체 질문 수: {len(QUESTIONS)}개")
 
     # 버튼을 누르면 질문 화면으로 이동합니다.
     if st.button(
@@ -1009,14 +1064,18 @@ div[data-testid="stElementContainer"]:has(.carbti-sticky-progress) {{
 
 
 def render_question_page():
-    """질문을 한 페이지에 4개씩 표시합니다."""
+    """질문을 한 페이지에 5개씩 표시합니다."""
 
     render_scroll_to_top_if_requested()
 
+<<<<<<< HEAD
     questions_per_page = 4
+=======
+    questions_per_page = 5
+>>>>>>> f0dd90426a6075b7ba4964e8a481a3489a77be64
 
     # 현재 페이지에서 시작할 질문 위치입니다.
-    # 0, 4, 8, 12, 16 순서로 이동합니다.
+    # 0, 5, 10, 15 순서로 이동합니다.
     current_index = st.session_state.question_index
     total_questions = len(QUESTIONS)
 
@@ -1043,11 +1102,31 @@ def render_question_page():
         total_questions=total_questions,
     )
 
+    intro_lines = QUESTION_PAGE_INTROS.get(
+        page_questions[0]["id"],
+        (),
+    )
+    if intro_lines:
+        intro_html = "".join(
+            f"<p>{html.escape(line)}</p>"
+            for line in intro_lines
+        )
+        st.html(
+            QUESTION_PAGE_STYLE
+            + '<section class="carbti-question-intro">'
+            + intro_html
+            + "</section>"
+        )
+
     # 현재 화면에서 선택한 답변을 임시 저장합니다.
     selected_answers = {}
 
     for question in page_questions:
-        st.subheader(question["text"])
+        st.html(
+            '<h3 class="carbti-question-title">'
+            + html.escape(question["text"])
+            + "</h3>"
+        )
 
         choice_texts = [
             choice["text"]
@@ -1100,7 +1179,7 @@ def render_question_page():
                 st.session_state.scroll_to_page_top = True
                 st.rerun()
 
-    # 현재 페이지의 네 질문에 모두 답했는지 확인합니다.
+    # 현재 페이지의 다섯 질문에 모두 답했는지 확인합니다.
     has_unanswered_question = any(
         answer_index is None
         for answer_index in selected_answers.values()
@@ -1124,7 +1203,7 @@ def render_question_page():
                     answer_index
                 )
 
-            # 다음 네 질문으로 이동합니다.
+            # 다음 다섯 질문으로 이동합니다.
             st.session_state.question_index = page_end
             st.session_state.scroll_to_page_top = True
             st.rerun()
