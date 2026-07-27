@@ -1,3 +1,9 @@
+CREATE DATABASE IF NOT EXISTS `carbti`
+    DEFAULT CHARACTER SET utf8mb4
+    DEFAULT COLLATE utf8mb4_unicode_ci;
+
+USE `carbti`;
+
 CREATE TABLE `manufacturer` (
     `manufacturer_id`   INT             NOT NULL AUTO_INCREMENT,
     `manufacturer_name` VARCHAR(255)    NOT NULL,
@@ -14,6 +20,8 @@ CREATE TABLE `vehicle` (
     `car_img`         VARCHAR(255)  NULL,
     `car_description` VARCHAR(255)  NULL,
     `vec_purpose`     VARCHAR(255)  NULL,
+    `new_car_url`     VARCHAR(255)  NULL,
+    `used_car_url`    VARCHAR(255)  NULL,
     `manufacturer_id` INT           NOT NULL,
     PRIMARY KEY (`vehicle_id`),
     FOREIGN KEY (`manufacturer_id`) REFERENCES `manufacturer`(`manufacturer_id`)
@@ -78,6 +86,7 @@ CREATE TABLE `car_mbti` (
     `mbti_id`          VARCHAR(10)   NOT NULL,
     `mbti_name`        VARCHAR(255)  NULL,
     `mbti_description` VARCHAR(255)  NULL,
+    `mbti_tags`        VARCHAR(255)  NULL,
     PRIMARY KEY (`mbti_id`)
 );
 
@@ -91,8 +100,3 @@ CREATE TABLE `car_recommend` (
     FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle`(`vehicle_id`),
     FOREIGN KEY (`mbti_id`) REFERENCES `car_mbti`(`mbti_id`)
 );
-ALTER TABLE `vehicle`
-ADD COLUMN `new_car_url` VARCHAR(255) NULL AFTER `vec_purpose`,
-ADD COLUMN `used_car_url` VARCHAR(255) NULL AFTER `new_car_url`;
-ALTER TABLE car_mbti
-ADD COLUMN mbti_tags VARCHAR(255) NULL AFTER mbti_description;
