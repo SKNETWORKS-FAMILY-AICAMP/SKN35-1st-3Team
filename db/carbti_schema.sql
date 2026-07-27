@@ -94,3 +94,5 @@ CREATE TABLE `car_recommend` (
 ALTER TABLE `vehicle`
 ADD COLUMN `new_car_url` VARCHAR(255) NULL AFTER `vec_purpose`,
 ADD COLUMN `used_car_url` VARCHAR(255) NULL AFTER `new_car_url`;
+ALTER TABLE car_mbti
+ADD COLUMN mbti_tags VARCHAR(255) NULL AFTER mbti_description;
