@@ -936,26 +936,113 @@ def render_main_page():
     사용자가 애플리케이션에 처음 진입했을 때 표시되는 화면입니다.
     """
 
-    # 페이지의 가장 큰 제목을 출력합니다.
-    st.title("성향 검사")
-
-    # 검사에 대한 간단한 설명을 출력합니다.
-    st.write(
-        "질문에 답하면 사용자의 점수를 계산하고, "
-        "가장 가까운 성향 유형을 순서대로 보여줍니다."
+    st.html(
+        """
+<style>
+.block-container:has(.carbti-start-page) {
+  max-width: 780px;
+  padding-top: 2.25rem;
+  padding-bottom: 0;
+}
+.carbti-start-page {
+  text-align: center;
+  color: var(--st-text-color);
+}
+.carbti-start-copy {
+  margin: 0 auto 1.75rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.42;
+  font-weight: 500;
+  word-break: keep-all;
+}
+.carbti-start-copy p {
+  margin: 0 0 1.35rem;
+}
+.carbti-start-copy p:last-child {
+  margin-bottom: 0;
+}
+div[data-testid="stButton"] > button[kind="primary"] {
+  min-height: 3.7rem;
+  border: 2px solid #B8B8B8;
+  border-radius: 12px;
+  background: #454545;
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: none;
+}
+div[data-testid="stButton"] > button[kind="primary"]:hover {
+  border-color: #8F8F8F;
+  background: #353535;
+  color: #FFFFFF;
+}
+.carbti-start-image-caption {
+  margin-top: 0.25rem;
+  text-align: center;
+  color: #6B7280;
+}
+@media (max-width: 640px) {
+  .block-container:has(.carbti-start-page) {
+    padding-top: 1.4rem;
+  }
+  .carbti-start-copy {
+    font-size: 1rem;
+  }
+}
+</style>
+<section class="carbti-start-page">
+  <div class="carbti-start-copy">
+    <p>
+      지금부터 당신의 CAR-BTI를 찾는 여정을 떠나보겠습니다!<br>
+      준비 되셨나요?
+    </p>
+    <p>
+      주어지는 20가지의 질문에 답을 해주시면<br>
+      당신에게 딱 맞는 CAR를 보여드립니다!<br>
+      혹시 아직 차를 한번도 구매해본 적이 없으시다면<br>
+      이럴 것 같다~ 로 선택해주셔도 괜찮습니다.
+    </p>
+    <p>CAR-BTI 검사는 약 3분 정도 소요됩니다.</p>
+  </div>
+</section>
+"""
     )
 
+    # 시안처럼 버튼을 오른쪽에 배치합니다.
+    _, start_button_column = st.columns([1.7, 1])
+    with start_button_column:
+        if st.button(
+            "→ 검사시작하기",
+            type="primary",
+            width="stretch",
+        ):
+            # 첫 번째 질문부터 시작하도록 질문 번호를 0으로 설정합니다.
+            st.session_state.question_index = 0
 
-    # 버튼을 누르면 질문 화면으로 이동합니다.
-    if st.button(
-        "검사 시작",
-        width="stretch",
-    ):
-        # 첫 번째 질문부터 시작하도록 질문 번호를 0으로 설정합니다.
-        st.session_state.question_index = 0
+            # 질문 화면 진입 시 최상단에서 시작합니다.
+            st.session_state.scroll_to_page_top = True
 
-        # 페이지 상태를 question으로 변경합니다.
-        change_page("question")
+            # 페이지 상태를 question으로 변경합니다.
+            change_page("question")
+
+    first_page_image = (
+        Path(__file__).resolve().parent
+        / "images"
+        / "first_page_im.png"
+    )
+    if first_page_image.exists():
+        _, image_column, _ = st.columns([0.20, 3.0, 0.20])
+        with image_column:
+            st.image(
+                str(first_page_image),
+                width="stretch",
+            )
+    else:
+        st.html(
+            '<p class="carbti-start-image-caption">'
+            "첫 화면 차량 이미지를 준비 중입니다."
+            "</p>"
+        )
 
 # %%
 # ============================================================
