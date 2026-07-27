@@ -9,6 +9,7 @@ dependencies = [
     "certifi>=2026.7.22",
     "numpy>=2.5.1",
     "pandas>=3.0.5",
+    "pillow>=12.3.0",
     "pymysql>=1.2.0",
     "python-dotenv>=1.2.2",
     "requests>=2.34.2",
