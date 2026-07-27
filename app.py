@@ -182,6 +182,12 @@ QUESTION_PAGE_INTROS = {
 
 QUESTION_PAGE_STYLE = """
 <style>
+.block-container:has(.carbti-question-intro) {
+  width: 85%;
+  max-width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+}
 .carbti-question-intro {
   margin: 1rem 0 1.25rem;
   padding: 1rem 1.15rem;
@@ -215,6 +221,12 @@ QUESTION_PAGE_STYLE = """
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.45;
+}
+@media (max-width: 720px) {
+  .block-container:has(.carbti-question-intro) {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 </style>
 """
@@ -1584,7 +1596,9 @@ VEHICLE_CARD_STYLE = """
 <style>
 .carbti-vehicle-card {
   display: block;
-  width: 100%;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
   box-sizing: border-box;
   overflow: hidden;
   border: 1px solid var(--st-border-color, #D1D5DB);
@@ -1614,6 +1628,14 @@ VEHICLE_CARD_STYLE = """
 .carbti-vehicle-card.is-disabled {
   opacity: 0.78;
   pointer-events: none;
+}
+.carbti-vehicle-card.is-rank-2 {
+  margin-right: 0.35rem;
+  margin-left: auto;
+}
+.carbti-vehicle-card.is-rank-3 {
+  margin-right: auto;
+  margin-left: 0.35rem;
 }
 .carbti-result-header {
   padding: 1.4rem 1.5rem 1.15rem;
@@ -1654,23 +1676,31 @@ VEHICLE_CARD_STYLE = """
   font-size: 0.85rem;
   font-weight: 700;
 }
+.carbti-lower-heading {
+  width: 70%;
+  margin: 1.5rem auto 0.8rem;
+  color: var(--st-heading-color, var(--st-text-color));
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
 .carbti-vehicle-image-wrap {
   position: relative;
   display: flex;
   width: 100%;
-  height: 220px;
+  height: 176px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: var(--st-secondary-background-color, #F3F4F6);
 }
 .carbti-vehicle-card.is-featured .carbti-vehicle-image-wrap {
-  height: 390px;
+  height: 312px;
 }
 .carbti-vehicle-image {
-  width: 100%;
+  width: 80%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .carbti-vehicle-rank-badge {
   position: absolute;
@@ -1720,6 +1750,19 @@ VEHICLE_CARD_STYLE = """
   .carbti-vehicle-card:focus,
   .carbti-vehicle-card:active {
     transform: none;
+  }
+}
+@media (max-width: 720px) {
+  .carbti-vehicle-card {
+    width: 100%;
+  }
+  .carbti-lower-heading {
+    width: 100%;
+  }
+  .carbti-vehicle-card.is-rank-2,
+  .carbti-vehicle-card.is-rank-3 {
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 </style>
@@ -1788,6 +1831,7 @@ def render_vehicle_card(
     card_classes = ["carbti-vehicle-card"]
     if featured:
         card_classes.append("is-featured")
+    card_classes.append(f"is-rank-{rank}")
     if not card_is_linkable:
         card_classes.append("is-disabled")
     card_class = " ".join(card_classes)
@@ -1888,13 +1932,9 @@ def render_result_page():
         calculate_results()
         user_mbti = st.session_state.user_mbti
 
-    placeholder_error = None
     try:
         mbti, recommendations = load_result_data(user_mbti)
-        using_placeholder = False
-    except MbtiDataError as error:
-        using_placeholder = True
-        placeholder_error = str(error)
+    except MbtiDataError:
         mbti = CAR_MBTI_FALLBACKS[user_mbti].copy()
         recommendations = [
             {
@@ -1932,8 +1972,15 @@ def render_result_page():
 
     lower_recommendations = recommendations[1:3]
     if lower_recommendations:
-        st.subheader("2·3위 추천 차량")
-        columns = st.columns(len(lower_recommendations))
+        st.html(
+            '<h3 class="carbti-lower-heading">'
+            "2·3위 추천 차량"
+            "</h3>"
+        )
+        columns = st.columns(
+            len(lower_recommendations),
+            gap="small",
+        )
         for column, recommendation in zip(
             columns,
             lower_recommendations,
@@ -1943,11 +1990,6 @@ def render_result_page():
                     recommendation,
                     user_mbti=user_mbti,
                 )
-
-    with st.expander("내 상세 점수 확인", icon=":material/analytics:"):
-        st.json(st.session_state.user_scores)
-        if using_placeholder:
-            st.caption(placeholder_error)
 
     result_image = build_result_image(
         user_mbti,
