@@ -10,7 +10,7 @@ import pymysql
 DB_CONFIG = {
     "host": "localhost",
     "user": "root",
-    "password": "본인_비밀번호_입력",
+    "password": "1234",
     "database": "carbti",
     "charset": "utf8mb4",
 }
