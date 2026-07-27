@@ -35,3 +35,5 @@ Thumbs.db
 
 # ── 이 프로젝트에서 생성되는 산출물 ──────────────────────────────
 vehicle_seed_filled.json
+.streamlit/secrets.toml
+app.py
