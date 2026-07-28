@@ -40,10 +40,6 @@ load_dotenv()
 
 DB_NAME = os.getenv("DB_DATABASE", "carbti")
 
-
-# ------------------------------------------------------------
-# 1. 연결
-# ------------------------------------------------------------
 def _base_config(with_database: bool):
     host = os.getenv("DB_HOST", "localhost")
     config = {
@@ -56,7 +52,6 @@ def _base_config(with_database: bool):
     if with_database:
         config["database"] = DB_NAME
 
-    # TiDB Cloud는 SSL 연결이 필수라 자동으로 감지해서 켜줌
     if "tidbcloud.com" in host:
         try:
             import certifi
@@ -71,7 +66,6 @@ def _base_config(with_database: bool):
 def get_db_connection(**extra):
     """
     앱/crawler에서 실제 쿼리할 때 쓰는 커넥션.
-    client_flag 등 추가 옵션이 필요하면 get_db_connection(client_flag=...)처럼 넘기면 됨.
     """
     config = _base_config(with_database=True)
     config.update(extra)
@@ -103,14 +97,15 @@ def _find_schema_file():
 
 _schema_ready = False  # 같은 프로세스 안에서 여러 번 호출돼도 한 번만 실제로 실행하기 위한 플래그
 
+    #  """
+    #     carbti DB와 모든 테이블이 없으면 만듦. 이미 있으면 아무것도 안 하고 넘어감.
+    #     db/carbti_schema.sql 파일을 읽어서 그대로 실행하는 방식이라
+    #     스키마를 고칠 땐 그 .sql 파일 하나만 고치면 됨.
+    #     Streamlit 앱 시작 시 한 번 호출하도록 설계됨 (idempotent - 여러 번 호출해도 안전).
+    # """
 
 def ensure_schema():
-    """
-    carbti DB와 모든 테이블이 없으면 만듦. 이미 있으면 아무것도 안 하고 넘어감.
-    db/carbti_schema.sql 파일을 읽어서 그대로 실행하는 방식이라
-    스키마를 고칠 땐 그 .sql 파일 하나만 고치면 됨.
-    Streamlit 앱 시작 시 한 번 호출하도록 설계됨 (idempotent - 여러 번 호출해도 안전).
-    """
+   
     global _schema_ready
     if _schema_ready:
         return
