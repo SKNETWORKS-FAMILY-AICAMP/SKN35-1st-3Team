@@ -29,7 +29,6 @@
 | 역할 | _(팀장 및 크롤링)_ | _(크롤링 및 DB 설계)_ | _(크롤링 및 화면서브 )_ | _(질문 설계 및 화면)_ | _(질문 설계 및 화면)_ |
 | GitHub | [@zozuzu](https://github.com/zozuzu) | [@taemin1997](https://github.com/taemin1997) | [@Junho7-Kweon](https://github.com/Junho7-Kweon) | [@inaskn35 ](https://github.com/) | [@rupria](https://github.com/) |
 
-> ✏️ 실제 팀원 정보로 표를 채워주세요.
 
 ## 🛠️ 기술 스택
 
