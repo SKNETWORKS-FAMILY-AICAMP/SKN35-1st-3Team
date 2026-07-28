@@ -9,6 +9,7 @@
 ## 📌 서비스명
 
 **CarBTI** (Car + MBTI) — 자동차 성향 검사 & 맞춤 차량 추천 서비스
+
 [CarBTI](https://skn35-1st-3team-nnrf48gks6yzw4qemidzdq.streamlit.app/) 
 
 ## 📖 프로젝트 개요
@@ -99,7 +100,7 @@ car_mbti     1─N car_recommend N─1 vehicle
 
 ## 🖥️ 구현 화면
 
-
+[구현 동영상] (https://drive.google.com/file/d/1-kQiLjVrv7RRMOlCnmR6H04EjQco6Ape/view?usp=sharing)
 
 ## ⚙️ 실행 방법
 
