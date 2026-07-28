@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
+import altair as alt
 import pandas as pd
 import pymysql
 from PIL import Image, ImageDraw, ImageFont, ImageOps
@@ -2438,15 +2439,71 @@ def render_vehicle_detail_page():
                 if sales_chart_data.empty:
                     st.caption("등록된 거래량 데이터가 없습니다.")
                 else:
-                    st.line_chart(
-                        sales_chart_data,
-                        x="sales_period",
-                        y="sales_count",
-                        x_label="판매월",
-                        y_label="거래량",
-                        color="#007BFF",
+                    chart_display_data = sales_chart_data.rename(
+                        columns={
+                            "sales_period": "판매월",
+                            "sales_count": "누적판매",
+                        }
+                    )
+                    sales_chart = (
+                        alt.Chart(chart_display_data)
+                        .mark_line(
+                            color="#007BFF",
+                            point=alt.OverlayMarkDef(
+                                color="#007BFF",
+                                filled=True,
+                                size=70,
+                            ),
+                            strokeWidth=3,
+                        )
+                        .encode(
+                            x=alt.X(
+                                "판매월:N",
+                                sort=None,
+                                axis=alt.Axis(
+                                    title="판매월",
+                                    labelAngle=0,
+                                    labelOverlap=False,
+                                    labelPadding=8,
+                                    titlePadding=12,
+                                ),
+                            ),
+                            y=alt.Y(
+                                "누적판매:Q",
+                                axis=alt.Axis(
+                                    title=None,
+                                    labels=False,
+                                    ticks=False,
+                                    domain=False,
+                                ),
+                            ),
+                            tooltip=[
+                                alt.Tooltip(
+                                    "판매월:N",
+                                    title="판매월",
+                                ),
+                                alt.Tooltip(
+                                    "누적판매:Q",
+                                    title="누적판매",
+                                    format=",",
+                                ),
+                            ],
+                        )
+                        .properties(
+                            height=220,
+                            title=alt.TitleParams(
+                                text="거래량",
+                                anchor="start",
+                                color="#6B7280",
+                                fontSize=13,
+                                fontWeight=500,
+                                offset=10,
+                            ),
+                        )
+                    )
+                    st.altair_chart(
+                        sales_chart,
                         width="stretch",
-                        height=220,
                     )
 
             st.divider()
