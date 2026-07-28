@@ -26,8 +26,8 @@ from crawling.db_config import ensure_schema, get_db_connection
 # st.set_page_config()는 Streamlit 명령 중 가장 먼저 실행되어야 합니다.
 # 따라서 함수 내부보다 파일 상단에 두는 편이 이해하기 쉽습니다.
 st.set_page_config(
-    page_title="성향 검사",
-    page_icon="📝",
+    page_title="CarBTI",
+    page_icon="🚗",
     layout="wide",
 )
 
