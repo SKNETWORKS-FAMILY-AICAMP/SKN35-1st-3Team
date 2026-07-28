@@ -39,3 +39,7 @@ vehicle_seed_filled.json
 .streamlit/*
 !.streamlit/secrets.toml.example
 
+util/
+*.exe
+*.msi
+*.pdf
