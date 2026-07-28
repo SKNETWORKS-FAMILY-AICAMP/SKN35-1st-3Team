@@ -9,6 +9,7 @@
 ## 📌 서비스명
 
 **CarBTI** (Car + MBTI) — 자동차 성향 검사 & 맞춤 차량 추천 서비스
+[CarBTI](https://skn35-1st-3team-nnrf48gks6yzw4qemidzdq.streamlit.app/) 
 
 ## 📖 프로젝트 개요
 
@@ -98,13 +99,11 @@ car_mbti     1─N car_recommend N─1 vehicle
 
 ## 🖥️ 구현 화면
 
-| 시작 화면 | 질문 화면 | 결과 & 추천 화면 | 차량 상세 화면 |
-| --- | --- | --- | --- |
-| _(스크린샷)_ | _(스크린샷)_ | _(스크린샷)_ | _(스크린샷)_ |
+
 
 ## ⚙️ 실행 방법
 
-필요한 도구: `Git`, [`uv`](https://docs.astral.sh/uv/)
+필요한 도구: `Git`, `uv`
 
 ```bash
 git clone <저장소-주소>
