@@ -218,9 +218,29 @@ QUESTION_PAGE_STYLE = """
 .carbti-question-title {
   margin: 0.8rem 0 0.55rem;
   color: var(--st-heading-color, var(--st-text-color));
-  font-size: 1.1rem;
+  font-size: 1.21rem;
   font-weight: 700;
   line-height: 1.45;
+  text-align: left;
+}
+.block-container:has(.carbti-question-intro)
+  div[data-testid="stRadio"] [role="radiogroup"] {
+  align-items: stretch;
+}
+.block-container:has(.carbti-question-intro)
+  label[data-testid="stRadioOption"] {
+  width: 100%;
+}
+.block-container:has(.carbti-question-intro)
+  label[data-testid="stRadioOption"] > div {
+  width: 100%;
+  justify-content: flex-start;
+}
+.block-container:has(.carbti-question-intro)
+  label[data-testid="stRadioOption"] p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: left;
 }
 @media (max-width: 720px) {
   .block-container:has(.carbti-question-intro) {
@@ -1556,20 +1576,12 @@ def build_result_image(user_mbti, mbti, recommendation):
         fill="#111827",
         anchor="mt",
     )
-    y = draw_wrapped_text(
+    draw_wrapped_text(
         draw,
         mbti["mbti_description"],
         (110, 1040),
         body_font,
         "#374151",
-        980,
-    )
-    draw_wrapped_text(
-        draw,
-        recommendation["recom_reason"],
-        (110, y + 28),
-        caption_font,
-        "#6B7280",
         980,
     )
 
@@ -1595,6 +1607,7 @@ TEST_IMAGE_DATA_URI = (
 VEHICLE_CARD_STYLE = """
 <style>
 .carbti-vehicle-card {
+  position: relative;
   display: block;
   width: 70%;
   margin-right: auto;
@@ -1610,14 +1623,15 @@ VEHICLE_CARD_STYLE = """
   transform-style: preserve-3d;
   transform-origin: center;
   transition:
-    border-color 180ms ease,
     box-shadow 180ms ease,
     transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .carbti-vehicle-card:hover,
 .carbti-vehicle-card:focus {
-  border-color: var(--st-primary-color);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  box-shadow:
+    0 0 26px rgba(0, 123, 255, 0.28),
+    0 0 48px rgba(89, 169, 255, 0.2),
+    0 12px 30px rgba(0, 0, 0, 0.14);
   transform: perspective(1200px) rotateY(-2deg) translateY(-3px);
   outline: none;
 }
@@ -1638,7 +1652,7 @@ VEHICLE_CARD_STYLE = """
   margin-left: 0.35rem;
 }
 .carbti-result-header {
-  padding: 1.4rem 1.5rem 1.15rem;
+  padding: 1.4rem 1.5rem 1.05rem;
   text-align: center;
 }
 .carbti-result-rank {
@@ -1664,17 +1678,18 @@ VEHICLE_CARD_STYLE = """
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.9rem;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
 }
 .carbti-result-tag {
   display: inline-flex;
-  padding: 0.35rem 0.75rem;
+  padding: 0.42rem 0.9rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--st-primary-color) 16%, transparent);
   color: var(--st-primary-color);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
+  line-height: 1.2;
 }
 .carbti-lower-heading {
   width: 70%;
@@ -1713,6 +1728,12 @@ VEHICLE_CARD_STYLE = """
   color: #FFFFFF;
   font-size: 0.8rem;
   font-weight: 700;
+}
+.carbti-vehicle-card.is-featured .carbti-vehicle-rank-badge {
+  top: 0.9rem;
+  left: 0.9rem;
+  padding: 0.36rem 0.78rem;
+  font-size: 0.96rem;
 }
 .carbti-vehicle-footer {
   display: flex;
@@ -1997,16 +2018,28 @@ def render_result_page():
         first_recommendation,
     )
     st.divider()
-    with st.container(horizontal=True):
-        st.download_button(
-            "이미지 저장",
-            data=result_image,
-            file_name=f"carbti-{user_mbti}.png",
-            mime="image/png",
-            icon=":material/download:",
+    _, result_actions_column, _ = st.columns([1, 1.15, 1])
+    with result_actions_column:
+        download_column, restart_column = st.columns(
+            2,
+            gap="small",
         )
-        if st.button("다시하기", icon=":material/refresh:"):
-            reset_test()
+        with download_column:
+            st.download_button(
+                "이미지 저장",
+                data=result_image,
+                file_name=f"carbti-{user_mbti}.png",
+                mime="image/png",
+                icon=":material/download:",
+                width="stretch",
+            )
+        with restart_column:
+            if st.button(
+                "다시하기",
+                icon=":material/refresh:",
+                width="stretch",
+            ):
+                reset_test()
 
 
 def return_to_result_page():
