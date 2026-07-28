@@ -29,7 +29,7 @@
 =======
 | 사진 | <img src="./images/레드.png" width="80"> | <img src="./images/블루.png" width="80"> | <img src="./images/그린.png" width="80"> | <img src="./images/옐로.png" width="80"> | <img src="./images/핑크.png" width="80"> |
 | 이름 | _조현주_ | _고태민_ | _권준호_ | _장인화_ | _정진봉_ |
-| 역할 | _(예: 팀장 / DB 설계)_ | _(예: 크롤링)_ | _(예: 프론트엔드)_ | _(예: 백엔드)_ | _(예: 데이터 분석)_ |
+| 역할 | _(팀장 및 크롤링)_ | _(크롤링 및 DB 설계)_ | _(크롤링 및 화면서브 )_ | _(질문 설계 및 화면)_ | _(질문 설계 및 화면)_ |
 | GitHub | [@zozuzu](https://github.com/zozuzu) | [@taemin1997](https://github.com/taemin1997) | [@Junho7-Kweon](https://github.com/Junho7-Kweon) | [@inaskn35 ](https://github.com/) | [@rupria](https://github.com/) |
 >>>>>>> f0dd90426a6075b7ba4964e8a481a3489a77be64
 
