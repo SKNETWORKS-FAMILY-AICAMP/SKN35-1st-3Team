@@ -182,19 +182,25 @@ QUESTION_PAGE_INTROS = {
 
 QUESTION_PAGE_STYLE = """
 <style>
+.block-container:has(.carbti-question-intro) {
+  width: 85%;
+  max-width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+}
 .carbti-question-intro {
   margin: 1rem 0 1.25rem;
   padding: 1rem 1.15rem;
   border: 1px solid color-mix(
     in srgb,
-    var(--st-primary-color, #FF4B4B) 32%,
+    var(--st-primary-color, #007BFF) 32%,
     var(--st-border-color, #D1D5DB)
   );
-  border-left: 5px solid var(--st-primary-color, #FF4B4B);
+  border-left: 5px solid var(--st-primary-color, #007BFF);
   border-radius: 14px;
   background: color-mix(
     in srgb,
-    var(--st-primary-color, #FF4B4B) 7%,
+    var(--st-primary-color, #007BFF) 7%,
     var(--st-background-color, #FFFFFF)
   );
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
@@ -212,9 +218,35 @@ QUESTION_PAGE_STYLE = """
 .carbti-question-title {
   margin: 0.8rem 0 0.55rem;
   color: var(--st-heading-color, var(--st-text-color));
-  font-size: 1.1rem;
+  font-size: 1.21rem;
   font-weight: 700;
   line-height: 1.45;
+  text-align: left;
+}
+.block-container:has(.carbti-question-intro)
+  div[data-testid="stRadio"] [role="radiogroup"] {
+  align-items: stretch;
+}
+.block-container:has(.carbti-question-intro)
+  label[data-testid="stRadioOption"] {
+  width: 100%;
+}
+.block-container:has(.carbti-question-intro)
+  label[data-testid="stRadioOption"] > div {
+  width: 100%;
+  justify-content: flex-start;
+}
+.block-container:has(.carbti-question-intro)
+  label[data-testid="stRadioOption"] p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+@media (max-width: 720px) {
+  .block-container:has(.carbti-question-intro) {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 </style>
 """
@@ -963,17 +995,17 @@ def render_main_page():
 }
 div[data-testid="stButton"] > button[kind="primary"] {
   min-height: 3.7rem;
-  border: 2px solid #B8B8B8;
+  border: 2px solid #66B2FF;
   border-radius: 12px;
-  background: #454545;
+  background: #007BFF;
   color: #FFFFFF;
   font-size: 1.15rem;
   font-weight: 600;
-  box-shadow: none;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.24);
 }
 div[data-testid="stButton"] > button[kind="primary"]:hover {
-  border-color: #8F8F8F;
-  background: #353535;
+  border-color: #005FC7;
+  background: #0069D9;
   color: #FFFFFF;
 }
 .carbti-start-image-caption {
@@ -1117,8 +1149,8 @@ div[data-testid="stElementContainer"]:has(.carbti-sticky-progress) {{
   border-radius: inherit;
   background: linear-gradient(
     90deg,
-    var(--st-primary-color, #FF4B4B),
-    #F59E0B
+    var(--st-primary-color, #007BFF),
+    #59A9FF
   );
   transition: width 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }}
@@ -1513,7 +1545,7 @@ def build_result_image(user_mbti, mbti, recommendation):
         (rank_x, 915),
         rank_text,
         font=caption_font,
-        fill="#E85D35",
+        fill="#007BFF",
     )
 
     crown_x = rank_x + rank_box[2] + crown_gap
@@ -1544,20 +1576,12 @@ def build_result_image(user_mbti, mbti, recommendation):
         fill="#111827",
         anchor="mt",
     )
-    y = draw_wrapped_text(
+    draw_wrapped_text(
         draw,
         mbti["mbti_description"],
         (110, 1040),
         body_font,
         "#374151",
-        980,
-    )
-    draw_wrapped_text(
-        draw,
-        recommendation["recom_reason"],
-        (110, y + 28),
-        caption_font,
-        "#6B7280",
         980,
     )
 
@@ -1583,8 +1607,11 @@ TEST_IMAGE_DATA_URI = (
 VEHICLE_CARD_STYLE = """
 <style>
 .carbti-vehicle-card {
+  position: relative;
   display: block;
-  width: 100%;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
   box-sizing: border-box;
   overflow: hidden;
   border: 1px solid var(--st-border-color, #D1D5DB);
@@ -1596,14 +1623,15 @@ VEHICLE_CARD_STYLE = """
   transform-style: preserve-3d;
   transform-origin: center;
   transition:
-    border-color 180ms ease,
     box-shadow 180ms ease,
     transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .carbti-vehicle-card:hover,
 .carbti-vehicle-card:focus {
-  border-color: var(--st-primary-color);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  box-shadow:
+    0 0 26px rgba(0, 123, 255, 0.28),
+    0 0 48px rgba(89, 169, 255, 0.2),
+    0 12px 30px rgba(0, 0, 0, 0.14);
   transform: perspective(1200px) rotateY(-2deg) translateY(-3px);
   outline: none;
 }
@@ -1615,8 +1643,16 @@ VEHICLE_CARD_STYLE = """
   opacity: 0.78;
   pointer-events: none;
 }
+.carbti-vehicle-card.is-rank-2 {
+  margin-right: 0.35rem;
+  margin-left: auto;
+}
+.carbti-vehicle-card.is-rank-3 {
+  margin-right: auto;
+  margin-left: 0.35rem;
+}
 .carbti-result-header {
-  padding: 1.4rem 1.5rem 1.15rem;
+  padding: 1.4rem 1.5rem 1.05rem;
   text-align: center;
 }
 .carbti-result-rank {
@@ -1642,35 +1678,44 @@ VEHICLE_CARD_STYLE = """
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.9rem;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
 }
 .carbti-result-tag {
   display: inline-flex;
-  padding: 0.35rem 0.75rem;
+  padding: 0.42rem 0.9rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--st-primary-color) 16%, transparent);
   color: var(--st-primary-color);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
+  line-height: 1.2;
+}
+.carbti-lower-heading {
+  width: 70%;
+  margin: 1.5rem auto 0.8rem;
+  color: var(--st-heading-color, var(--st-text-color));
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 .carbti-vehicle-image-wrap {
   position: relative;
   display: flex;
   width: 100%;
-  height: 220px;
+  height: 176px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: var(--st-secondary-background-color, #F3F4F6);
 }
 .carbti-vehicle-card.is-featured .carbti-vehicle-image-wrap {
-  height: 390px;
+  height: 312px;
 }
 .carbti-vehicle-image {
-  width: 100%;
+  width: 80%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .carbti-vehicle-rank-badge {
   position: absolute;
@@ -1683,6 +1728,12 @@ VEHICLE_CARD_STYLE = """
   color: #FFFFFF;
   font-size: 0.8rem;
   font-weight: 700;
+}
+.carbti-vehicle-card.is-featured .carbti-vehicle-rank-badge {
+  top: 0.9rem;
+  left: 0.9rem;
+  padding: 0.36rem 0.78rem;
+  font-size: 0.96rem;
 }
 .carbti-vehicle-footer {
   display: flex;
@@ -1720,6 +1771,19 @@ VEHICLE_CARD_STYLE = """
   .carbti-vehicle-card:focus,
   .carbti-vehicle-card:active {
     transform: none;
+  }
+}
+@media (max-width: 720px) {
+  .carbti-vehicle-card {
+    width: 100%;
+  }
+  .carbti-lower-heading {
+    width: 100%;
+  }
+  .carbti-vehicle-card.is-rank-2,
+  .carbti-vehicle-card.is-rank-3 {
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 </style>
@@ -1788,6 +1852,7 @@ def render_vehicle_card(
     card_classes = ["carbti-vehicle-card"]
     if featured:
         card_classes.append("is-featured")
+    card_classes.append(f"is-rank-{rank}")
     if not card_is_linkable:
         card_classes.append("is-disabled")
     card_class = " ".join(card_classes)
@@ -1888,13 +1953,9 @@ def render_result_page():
         calculate_results()
         user_mbti = st.session_state.user_mbti
 
-    placeholder_error = None
     try:
         mbti, recommendations = load_result_data(user_mbti)
-        using_placeholder = False
-    except MbtiDataError as error:
-        using_placeholder = True
-        placeholder_error = str(error)
+    except MbtiDataError:
         mbti = CAR_MBTI_FALLBACKS[user_mbti].copy()
         recommendations = [
             {
@@ -1932,8 +1993,15 @@ def render_result_page():
 
     lower_recommendations = recommendations[1:3]
     if lower_recommendations:
-        st.subheader("2·3위 추천 차량")
-        columns = st.columns(len(lower_recommendations))
+        st.html(
+            '<h3 class="carbti-lower-heading">'
+            "2·3위 추천 차량"
+            "</h3>"
+        )
+        columns = st.columns(
+            len(lower_recommendations),
+            gap="small",
+        )
         for column, recommendation in zip(
             columns,
             lower_recommendations,
@@ -1944,27 +2012,34 @@ def render_result_page():
                     user_mbti=user_mbti,
                 )
 
-    with st.expander("내 상세 점수 확인", icon=":material/analytics:"):
-        st.json(st.session_state.user_scores)
-        if using_placeholder:
-            st.caption(placeholder_error)
-
     result_image = build_result_image(
         user_mbti,
         mbti,
         first_recommendation,
     )
     st.divider()
-    with st.container(horizontal=True):
-        st.download_button(
-            "이미지 저장",
-            data=result_image,
-            file_name=f"carbti-{user_mbti}.png",
-            mime="image/png",
-            icon=":material/download:",
+    _, result_actions_column, _ = st.columns([1, 1.15, 1])
+    with result_actions_column:
+        download_column, restart_column = st.columns(
+            2,
+            gap="small",
         )
-        if st.button("다시하기", icon=":material/refresh:"):
-            reset_test()
+        with download_column:
+            st.download_button(
+                "이미지 저장",
+                data=result_image,
+                file_name=f"carbti-{user_mbti}.png",
+                mime="image/png",
+                icon=":material/download:",
+                width="stretch",
+            )
+        with restart_column:
+            if st.button(
+                "다시하기",
+                icon=":material/refresh:",
+                width="stretch",
+            ):
+                reset_test()
 
 
 def return_to_result_page():
@@ -2010,7 +2085,7 @@ VEHICLE_DETAIL_STYLE = """
   white-space: nowrap;
 }
 .carbti-news-title:hover {
-  color: #1769aa;
+  color: #007BFF;
   text-decoration: underline;
 }
 .carbti-news-date {
