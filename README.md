@@ -100,7 +100,7 @@ car_mbti     1─N car_recommend N─1 vehicle
 
 ## 🖥️ 구현 화면
 
-[구현 동영상] (https://drive.google.com/file/d/1-kQiLjVrv7RRMOlCnmR6H04EjQco6Ape/view?usp=sharing)
+[구현 동영상](https://drive.google.com/file/d/1-kQiLjVrv7RRMOlCnmR6H04EjQco6Ape/view?usp=sharing)
 
 ## ⚙️ 실행 방법
 
