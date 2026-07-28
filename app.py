@@ -95,7 +95,31 @@ GLOBAL_FONT_STYLE = """
   /* --carbti-font-family: 'CookieRun'; */
   /* --carbti-font-family: 'NexonMaplestory'; */
   --carbti-font-family: 'YuhanKimberlyPureunsoop';
+  /* Soft pastel gray used consistently across every application page. */
+  --carbti-page-background: #F4F5F7;
+  --carbti-text-color: #343A40;
 }
+
+html,
+body,
+[data-testid="stAppViewContainer"],
+[data-testid="stAppViewContainer"] > .main,
+.stApp {
+  background-color: var(--carbti-page-background) !important;
+}
+
+/* Override component text tokens while preserving explicit button/icon colors. */
+.stApp {
+  --st-text-color: var(--carbti-text-color);
+  --st-heading-color: var(--carbti-text-color);
+  color: var(--carbti-text-color);
+}
+
+/* A transparent fixed header must not wash out content that scrolls beneath it. */
+[data-testid="stHeader"] {
+  background-color: transparent !important;
+}
+
 html,
 body,
 .stApp,
