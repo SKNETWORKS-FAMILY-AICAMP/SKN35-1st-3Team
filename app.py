@@ -30,6 +30,91 @@ st.set_page_config(
     layout="wide",
 )
 
+GLOBAL_FONT_STYLE = """
+<style>
+/*
+다른 폰트를 사용할 때 해당 @font-face 주석을 해제하고
+--carbti-font-family 값만 같은 글꼴 이름으로 변경합니다.
+
+@font-face {
+  font-family: 'CookieRun';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CookieRun';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CookieRun';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Black00.woff') format('woff');
+  font-weight: 900;
+  font-display: swap;
+}
+*/
+
+/*
+@font-face {
+  font-family: 'NexonMaplestory';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NexonMaplestory';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+*/
+
+@font-face {
+  font-family: 'YuhanKimberlyPureunsoop';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101517@font-2/font-2/font-2-300.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YuhanKimberlyPureunsoop';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101517@font-2/font-2/font-2-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YuhanKimberlyPureunsoop';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101517@font-2/font-2/font-2-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  /* --carbti-font-family: 'CookieRun'; */
+  /* --carbti-font-family: 'NexonMaplestory'; */
+  --carbti-font-family: 'YuhanKimberlyPureunsoop';
+}
+html,
+body,
+.stApp,
+.stApp *:not([data-testid="stIconMaterial"]):not(.material-symbols-rounded),
+.stApp button,
+.stApp input,
+.stApp textarea,
+.stApp select {
+  font-family: var(--carbti-font-family), sans-serif !important;
+}
+/* Streamlit의 머티리얼 아이콘 글꼴은 변경하지 않습니다. */
+[data-testid="stIconMaterial"],
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded' !important;
+}
+</style>
+"""
+
+st.html(GLOBAL_FONT_STYLE)
+
 
 # ------------------------------------------------------------
 # DB 연결 헬퍼
@@ -159,8 +244,93 @@ QUESTIONS = [{'id': 1,
                'scores': {'P': 1}}]},
  {'id': 20,
   'text': '조수석에 탄 친구가 갑자기 "우리 원래 가려던 곳 말고, 바다 보러 핸들 꺾을까?"라고 한다면?',
-  'choices': [{'text': '원래 계획했던 맛집 예약이나 일정이 꼬여서 속으로 살짝 스트레스를 받거나 당황한다', 'scores': {'J': 1}},
+ 'choices': [{'text': '원래 계획했던 맛집 예약이나 일정이 꼬여서 속으로 살짝 스트레스를 받거나 당황한다', 'scores': {'J': 1}},
               {'text': '"오 완전 대박! 콜!"을 외치며 신나게 경로를 변경해 새로운 드라이브를 즐긴다', 'scores': {'P': 1}}]}]
+
+
+QUESTION_PAGE_INTROS = {
+    1: (
+        "차는 이동수단이지만 당신이 오랜 시간을 보내는 "
+        "아늑한 공간이기도 합니다.",
+        "차는 당신에게 어떤 공간일까요?",
+    ),
+    6: (
+        "차의 기술력에 대해 평소 관심이 있으셨나요?",
+    ),
+    11: (
+        "차는 아름다워야한다?! Or 차는 잘 움직여야지?!",
+    ),
+    16: (
+        "자동차 관리법은 어떠세요?",
+    ),
+}
+
+QUESTION_PAGE_STYLE = """
+<style>
+.block-container:has(.carbti-question-intro) {
+  width: 85%;
+  max-width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.carbti-question-intro {
+  margin: 1rem 0 1.25rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--st-primary-color, #007BFF) 32%,
+    var(--st-border-color, #D1D5DB)
+  );
+  border-left: 5px solid var(--st-primary-color, #007BFF);
+  border-radius: 14px;
+  background: color-mix(
+    in srgb,
+    var(--st-primary-color, #007BFF) 7%,
+    var(--st-background-color, #FFFFFF)
+  );
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
+}
+.carbti-question-intro p {
+  margin: 0;
+  color: var(--st-text-color);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.carbti-question-intro p + p {
+  margin-top: 0.35rem;
+}
+.carbti-question-title {
+  margin: 0.8rem 0 0.55rem;
+  color: var(--st-heading-color, var(--st-text-color));
+  font-size: 1.21rem;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: left;
+}
+div[data-testid="stRadio"] [role="radiogroup"] {
+  align-items: stretch;
+}
+label[data-testid="stRadioOption"] {
+  width: 100%;
+}
+label[data-testid="stRadioOption"] > div {
+  width: 100%;
+  justify-content: flex-start;
+}
+label[data-testid="stRadioOption"] p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+@media (max-width: 720px) {
+  .block-container:has(.carbti-question-intro) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+"""
 
 
 
@@ -457,16 +627,32 @@ ORDER BY sales_year, sales_month
 
 VEHICLE_NEWS_QUERY = """
 SELECT
-    news_id,
-    title,
-    summary,
-    news_url,
-    news_img,
-    news_category,
-    publish_date
-FROM news
-WHERE vehicle_id = %(vehicle_id)s
-ORDER BY publish_date DESC, news_id DESC
+    n.news_id,
+    n.title,
+    n.summary,
+    n.news_url,
+    n.news_img,
+    n.news_category,
+    n.publish_date
+FROM news AS n
+JOIN vehicle AS news_vehicle
+    ON news_vehicle.vehicle_id = n.vehicle_id
+JOIN vehicle AS selected_vehicle
+    ON selected_vehicle.vehicle_id = %(vehicle_id)s
+WHERE n.vehicle_id = %(vehicle_id)s
+   OR (
+        NOT EXISTS (
+            SELECT 1
+            FROM news AS exact_news
+            WHERE exact_news.vehicle_id = %(vehicle_id)s
+        )
+        AND news_vehicle.manufacturer_id = selected_vehicle.manufacturer_id
+   )
+ORDER BY
+    CASE WHEN n.vehicle_id = %(vehicle_id)s THEN 0 ELSE 1 END,
+    n.publish_date DESC,
+    n.news_id DESC
+LIMIT 3
 """
 
 VEHICLE_RECOMMEND_REASON_QUERY = """
@@ -716,6 +902,50 @@ def has_display_value(value):
     )
 
 
+def prepare_sales_chart_data(sales_rows):
+    """sales_stat 조회 결과를 차량별 월간 거래량 차트 형식으로 정리합니다."""
+
+    required_columns = {"sales_year", "sales_month", "sales_count"}
+    if sales_rows.empty or not required_columns.issubset(
+        sales_rows.columns
+    ):
+        return pd.DataFrame(columns=["sales_period", "sales_count"])
+
+    chart_rows = sales_rows[
+        ["sales_year", "sales_month", "sales_count"]
+    ].copy()
+    for column_name in required_columns:
+        chart_rows[column_name] = pd.to_numeric(
+            chart_rows[column_name],
+            errors="coerce",
+        )
+
+    chart_rows = chart_rows.dropna(subset=list(required_columns))
+    chart_rows = chart_rows[
+        chart_rows["sales_month"].between(1, 12)
+    ]
+    if chart_rows.empty:
+        return pd.DataFrame(columns=["sales_period", "sales_count"])
+
+    chart_rows["sales_year"] = chart_rows["sales_year"].astype(int)
+    chart_rows["sales_month"] = chart_rows["sales_month"].astype(int)
+    chart_rows = (
+        chart_rows.groupby(
+            ["sales_year", "sales_month"],
+            as_index=False,
+        )["sales_count"]
+        .sum()
+        .sort_values(["sales_year", "sales_month"])
+    )
+    chart_rows["sales_count"] = chart_rows["sales_count"].astype(int)
+    chart_rows["sales_period"] = (
+        chart_rows["sales_year"].astype(str)
+        + "-"
+        + chart_rows["sales_month"].astype(str).str.zfill(2)
+    )
+    return chart_rows[["sales_period", "sales_count"]]
+
+
 # %%
 # ============================================================
 # 셀 3. Streamlit 세션 상태 초기화
@@ -863,28 +1093,113 @@ def render_main_page():
     사용자가 애플리케이션에 처음 진입했을 때 표시되는 화면입니다.
     """
 
-    # 페이지의 가장 큰 제목을 출력합니다.
-    st.title("성향 검사")
-
-    # 검사에 대한 간단한 설명을 출력합니다.
-    st.write(
-        "질문에 답하면 사용자의 점수를 계산하고, "
-        "가장 가까운 성향 유형을 순서대로 보여줍니다."
+    st.html(
+        """
+<style>
+.block-container:has(.carbti-start-page) {
+  max-width: 780px;
+  padding-top: 2.25rem;
+  padding-bottom: 0;
+}
+.carbti-start-page {
+  text-align: center;
+  color: var(--st-text-color);
+}
+.carbti-start-copy {
+  margin: 0 auto 1.75rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.42;
+  font-weight: 500;
+  word-break: keep-all;
+}
+.carbti-start-copy p {
+  margin: 0 0 1.35rem;
+}
+.carbti-start-copy p:last-child {
+  margin-bottom: 0;
+}
+div[data-testid="stButton"] > button[kind="primary"] {
+  min-height: 3.7rem;
+  border: 2px solid #66B2FF;
+  border-radius: 12px;
+  background: #007BFF;
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.24);
+}
+div[data-testid="stButton"] > button[kind="primary"]:hover {
+  border-color: #005FC7;
+  background: #0069D9;
+  color: #FFFFFF;
+}
+.carbti-start-image-caption {
+  margin-top: 0.25rem;
+  text-align: center;
+  color: #6B7280;
+}
+@media (max-width: 640px) {
+  .block-container:has(.carbti-start-page) {
+    padding-top: 1.4rem;
+  }
+  .carbti-start-copy {
+    font-size: 1rem;
+  }
+}
+</style>
+<section class="carbti-start-page">
+  <div class="carbti-start-copy">
+    <p>
+      지금부터 당신의 CAR-BTI를 찾는 여정을 떠나보겠습니다!<br>
+      준비 되셨나요?
+    </p>
+    <p>
+      주어지는 20가지의 질문에 답을 해주시면<br>
+      당신에게 딱 맞는 CAR를 보여드립니다!<br>
+      혹시 아직 차를 한번도 구매해본 적이 없으시다면<br>
+      이럴 것 같다~ 로 선택해주셔도 괜찮습니다.
+    </p>
+    <p>CAR-BTI 검사는 약 3분 정도 소요됩니다.</p>
+  </div>
+</section>
+"""
     )
 
-    # QUESTIONS 리스트 길이를 이용해 전체 질문 수를 표시합니다.
-    st.info(f"전체 질문 수: {len(QUESTIONS)}개")
+    # 시안처럼 버튼을 오른쪽에 배치합니다.
+    _, start_button_column = st.columns([1.7, 1])
+    with start_button_column:
+        if st.button(
+            "→ 검사시작하기",
+            type="primary",
+            width="stretch",
+        ):
+            # 첫 번째 질문부터 시작하도록 질문 번호를 0으로 설정합니다.
+            st.session_state.question_index = 0
 
-    # 버튼을 누르면 질문 화면으로 이동합니다.
-    if st.button(
-        "검사 시작",
-        width="stretch",
-    ):
-        # 첫 번째 질문부터 시작하도록 질문 번호를 0으로 설정합니다.
-        st.session_state.question_index = 0
+            # 질문 화면 진입 시 최상단에서 시작합니다.
+            st.session_state.scroll_to_page_top = True
 
-        # 페이지 상태를 question으로 변경합니다.
-        change_page("question")
+            # 페이지 상태를 question으로 변경합니다.
+            change_page("question")
+
+    first_page_image = (
+        Path(__file__).resolve().parent
+        / "images"
+        / "first_page_im.png"
+    )
+    if first_page_image.exists():
+        _, image_column, _ = st.columns([0.20, 3.0, 0.20])
+        with image_column:
+            st.image(
+                str(first_page_image),
+                width="stretch",
+            )
+    else:
+        st.html(
+            '<p class="carbti-start-image-caption">'
+            "첫 화면 차량 이미지를 준비 중입니다."
+            "</p>"
+        )
 
 # %%
 # ============================================================
@@ -959,8 +1274,8 @@ div[data-testid="stElementContainer"]:has(.carbti-sticky-progress) {{
   border-radius: inherit;
   background: linear-gradient(
     90deg,
-    var(--st-primary-color, #FF4B4B),
-    #F59E0B
+    var(--st-primary-color, #007BFF),
+    #59A9FF
   );
   transition: width 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }}
@@ -993,14 +1308,18 @@ div[data-testid="stElementContainer"]:has(.carbti-sticky-progress) {{
 
 
 def render_question_page():
-    """질문을 한 페이지에 4개씩 표시합니다."""
+    """질문을 한 페이지에 5개씩 표시합니다."""
 
     render_scroll_to_top_if_requested()
 
+<<<<<<< HEAD
     questions_per_page = 4
+=======
+    questions_per_page = 5
+>>>>>>> 8a6c2fb1cbf5744dc31d94ae1e02e8eab1f1724c
 
     # 현재 페이지에서 시작할 질문 위치입니다.
-    # 0, 4, 8, 12, 16 순서로 이동합니다.
+    # 0, 5, 10, 15 순서로 이동합니다.
     current_index = st.session_state.question_index
     total_questions = len(QUESTIONS)
 
@@ -1027,11 +1346,33 @@ def render_question_page():
         total_questions=total_questions,
     )
 
+    intro_lines = QUESTION_PAGE_INTROS.get(
+        page_questions[0]["id"],
+        (),
+    )
+    # 모든 질문 페이지에서 동일한 글자 크기와 선택지 레이아웃을 적용합니다.
+    st.html(QUESTION_PAGE_STYLE)
+
+    if intro_lines:
+        intro_html = "".join(
+            f"<p>{html.escape(line)}</p>"
+            for line in intro_lines
+        )
+        st.html(
+            '<section class="carbti-question-intro">'
+            + intro_html
+            + "</section>"
+        )
+
     # 현재 화면에서 선택한 답변을 임시 저장합니다.
     selected_answers = {}
 
     for question in page_questions:
-        st.subheader(question["text"])
+        st.html(
+            '<h3 class="carbti-question-title">'
+            + html.escape(question["text"])
+            + "</h3>"
+        )
 
         choice_texts = [
             choice["text"]
@@ -1084,7 +1425,7 @@ def render_question_page():
                 st.session_state.scroll_to_page_top = True
                 st.rerun()
 
-    # 현재 페이지의 네 질문에 모두 답했는지 확인합니다.
+    # 현재 페이지의 다섯 질문에 모두 답했는지 확인합니다.
     has_unanswered_question = any(
         answer_index is None
         for answer_index in selected_answers.values()
@@ -1108,7 +1449,7 @@ def render_question_page():
                     answer_index
                 )
 
-            # 다음 네 질문으로 이동합니다.
+            # 다음 다섯 질문으로 이동합니다.
             st.session_state.question_index = page_end
             st.session_state.scroll_to_page_top = True
             st.rerun()
@@ -1189,8 +1530,38 @@ def calculate_results():
 # 셀 9. 결과 화면
 # ============================================================
 
+RESULT_FONT_URLS = {
+    False: (
+        "https://cdn.jsdelivr.net/gh/Project-Noonnu/"
+        "2607101517@font-2/font-2/font-2-500.woff2"
+    ),
+    True: (
+        "https://cdn.jsdelivr.net/gh/Project-Noonnu/"
+        "2607101517@font-2/font-2/font-2-700.woff2"
+    ),
+}
+
+
+@st.cache_data(ttl=86400, show_spinner=False)
+def download_result_font(font_url):
+    """다운로드 이미지에 사용할 웹폰트 파일을 불러옵니다."""
+
+    request = Request(
+        font_url,
+        headers={"User-Agent": "CarBTI-Streamlit/1.0"},
+    )
+    with urlopen(request, timeout=5) as response:
+        return response.read(5 * 1024 * 1024)
+
+
 def get_result_font(size, bold=False):
-    """운영체제에서 사용할 수 있는 한글 폰트를 찾아 반환합니다."""
+    """YuhanKimberlyPureunsoop을 우선 적용하고 실패하면 시스템 폰트를 사용합니다."""
+
+    try:
+        font_bytes = download_result_font(RESULT_FONT_URLS[bold])
+        return ImageFont.truetype(BytesIO(font_bytes), size=size)
+    except Exception:
+        pass
 
     font_candidates = [
         Path("C:/Windows/Fonts/malgunbd.ttf" if bold else "C:/Windows/Fonts/malgun.ttf"),
@@ -1261,8 +1632,19 @@ def build_result_image(user_mbti, mbti, recommendation):
 
     draw.rounded_rectangle((60, 55, 1140, 1445), radius=36, fill="white")
     # draw.text((110, 105), "나의 CarBTI", font=caption_font, fill="#6B7280")
+<<<<<<< HEAD
     draw.text((110, 155), mbti["mbti_name"], font=title_font, fill="#111827")
     draw.text((110, 240), user_mbti, font=heading_font, fill="#E85D35")
+=======
+    draw.text(
+        (600, 155),
+        mbti["mbti_name"],
+        font=title_font,
+        fill="#111827",
+        anchor="mt",
+    )
+    # draw.text((110, 240), user_mbti, font=heading_font, fill="#E85D35")
+>>>>>>> 8a6c2fb1cbf5744dc31d94ae1e02e8eab1f1724c
 
     image_box = (110, 330, 1090, 865)
     vehicle_image_bytes = download_vehicle_image(recommendation["car_img"])
@@ -1317,22 +1699,55 @@ def build_result_image(user_mbti, mbti, recommendation):
         + " "
         + recommendation["vehicle_name"]
     ).strip()
-    draw.text((110, 915), "추천 1위", font=caption_font, fill="#E85D35")
-    draw.text((110, 965), vehicle_name, font=heading_font, fill="#111827")
-    y = draw_wrapped_text(
+
+    rank_text = "1위"
+    rank_box = draw.textbbox((0, 0), rank_text, font=caption_font)
+    rank_width = rank_box[2] - rank_box[0]
+    crown_width = 30
+    crown_gap = 10
+    rank_group_width = rank_width + crown_gap + crown_width
+    rank_x = 600 - rank_group_width // 2 - rank_box[0]
+    draw.text(
+        (rank_x, 915),
+        rank_text,
+        font=caption_font,
+        fill="#007BFF",
+    )
+
+    crown_x = rank_x + rank_box[2] + crown_gap
+    crown_y = 916
+    draw.polygon(
+        [
+            (crown_x, crown_y + 21),
+            (crown_x + 3, crown_y + 5),
+            (crown_x + 10, crown_y + 14),
+            (crown_x + 15, crown_y),
+            (crown_x + 20, crown_y + 14),
+            (crown_x + 27, crown_y + 5),
+            (crown_x + 30, crown_y + 21),
+        ],
+        fill="#FBBF24",
+        outline="#D97706",
+    )
+    draw.rectangle(
+        (crown_x, crown_y + 20, crown_x + 30, crown_y + 25),
+        fill="#F59E0B",
+        outline="#D97706",
+    )
+
+    draw.text(
+        (600, 965),
+        vehicle_name,
+        font=heading_font,
+        fill="#111827",
+        anchor="mt",
+    )
+    draw_wrapped_text(
         draw,
         mbti["mbti_description"],
         (110, 1040),
         body_font,
         "#374151",
-        980,
-    )
-    draw_wrapped_text(
-        draw,
-        recommendation["recom_reason"],
-        (110, y + 28),
-        caption_font,
-        "#6B7280",
         980,
     )
 
@@ -1358,8 +1773,11 @@ TEST_IMAGE_DATA_URI = (
 VEHICLE_CARD_STYLE = """
 <style>
 .carbti-vehicle-card {
+  position: relative;
   display: block;
-  width: 100%;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
   box-sizing: border-box;
   overflow: hidden;
   border: 1px solid var(--st-border-color, #D1D5DB);
@@ -1371,14 +1789,15 @@ VEHICLE_CARD_STYLE = """
   transform-style: preserve-3d;
   transform-origin: center;
   transition:
-    border-color 180ms ease,
     box-shadow 180ms ease,
     transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .carbti-vehicle-card:hover,
 .carbti-vehicle-card:focus {
-  border-color: var(--st-primary-color);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  box-shadow:
+    0 0 26px rgba(0, 123, 255, 0.28),
+    0 0 48px rgba(89, 169, 255, 0.2),
+    0 12px 30px rgba(0, 0, 0, 0.14);
   transform: perspective(1200px) rotateY(-2deg) translateY(-3px);
   outline: none;
 }
@@ -1390,8 +1809,16 @@ VEHICLE_CARD_STYLE = """
   opacity: 0.78;
   pointer-events: none;
 }
+.carbti-vehicle-card.is-rank-2 {
+  margin-right: 0.35rem;
+  margin-left: auto;
+}
+.carbti-vehicle-card.is-rank-3 {
+  margin-right: auto;
+  margin-left: 0.35rem;
+}
 .carbti-result-header {
-  padding: 1.4rem 1.5rem 1.15rem;
+  padding: 1.4rem 1.5rem 1.05rem;
   text-align: center;
 }
 .carbti-result-rank {
@@ -1417,35 +1844,44 @@ VEHICLE_CARD_STYLE = """
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.9rem;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
 }
 .carbti-result-tag {
   display: inline-flex;
-  padding: 0.35rem 0.75rem;
+  padding: 0.42rem 0.9rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--st-primary-color) 16%, transparent);
   color: var(--st-primary-color);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
+  line-height: 1.2;
+}
+.carbti-lower-heading {
+  width: 70%;
+  margin: 1.5rem auto 0.8rem;
+  color: var(--st-heading-color, var(--st-text-color));
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 .carbti-vehicle-image-wrap {
   position: relative;
   display: flex;
   width: 100%;
-  height: 220px;
+  height: 176px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: var(--st-secondary-background-color, #F3F4F6);
 }
 .carbti-vehicle-card.is-featured .carbti-vehicle-image-wrap {
-  height: 390px;
+  height: 312px;
 }
 .carbti-vehicle-image {
-  width: 100%;
+  width: 80%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .carbti-vehicle-rank-badge {
   position: absolute;
@@ -1458,6 +1894,12 @@ VEHICLE_CARD_STYLE = """
   color: #FFFFFF;
   font-size: 0.8rem;
   font-weight: 700;
+}
+.carbti-vehicle-card.is-featured .carbti-vehicle-rank-badge {
+  top: 0.9rem;
+  left: 0.9rem;
+  padding: 0.36rem 0.78rem;
+  font-size: 0.96rem;
 }
 .carbti-vehicle-footer {
   display: flex;
@@ -1495,6 +1937,19 @@ VEHICLE_CARD_STYLE = """
   .carbti-vehicle-card:focus,
   .carbti-vehicle-card:active {
     transform: none;
+  }
+}
+@media (max-width: 720px) {
+  .carbti-vehicle-card {
+    width: 100%;
+  }
+  .carbti-lower-heading {
+    width: 100%;
+  }
+  .carbti-vehicle-card.is-rank-2,
+  .carbti-vehicle-card.is-rank-3 {
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 </style>
@@ -1563,6 +2018,7 @@ def render_vehicle_card(
     card_classes = ["carbti-vehicle-card"]
     if featured:
         card_classes.append("is-featured")
+    card_classes.append(f"is-rank-{rank}")
     if not card_is_linkable:
         card_classes.append("is-disabled")
     card_class = " ".join(card_classes)
@@ -1631,7 +2087,7 @@ def render_vehicle_card(
 {opening_tag}
 {featured_header}
   <div class="carbti-vehicle-image-wrap">
-    <span class="carbti-vehicle-rank-badge">추천 {rank}위</span>
+    <span class="carbti-vehicle-rank-badge">{rank}위</span>
     {image_html}
   </div>
   <div class="carbti-vehicle-footer">
@@ -1663,13 +2119,9 @@ def render_result_page():
         calculate_results()
         user_mbti = st.session_state.user_mbti
 
-    placeholder_error = None
     try:
         mbti, recommendations = load_result_data(user_mbti)
-        using_placeholder = False
-    except MbtiDataError as error:
-        using_placeholder = True
-        placeholder_error = str(error)
+    except MbtiDataError:
         mbti = CAR_MBTI_FALLBACKS[user_mbti].copy()
         recommendations = [
             {
@@ -1707,8 +2159,15 @@ def render_result_page():
 
     lower_recommendations = recommendations[1:3]
     if lower_recommendations:
-        st.subheader("2·3위 추천 차량")
-        columns = st.columns(len(lower_recommendations))
+        st.html(
+            '<h3 class="carbti-lower-heading">'
+            "2·3위 추천 차량"
+            "</h3>"
+        )
+        columns = st.columns(
+            len(lower_recommendations),
+            gap="small",
+        )
         for column, recommendation in zip(
             columns,
             lower_recommendations,
@@ -1719,27 +2178,34 @@ def render_result_page():
                     user_mbti=user_mbti,
                 )
 
-    with st.expander("내 상세 점수 확인", icon=":material/analytics:"):
-        st.json(st.session_state.user_scores)
-        if using_placeholder:
-            st.caption(placeholder_error)
-
     result_image = build_result_image(
         user_mbti,
         mbti,
         first_recommendation,
     )
     st.divider()
-    with st.container(horizontal=True):
-        st.download_button(
-            "이미지 저장",
-            data=result_image,
-            file_name=f"carbti-{user_mbti}.png",
-            mime="image/png",
-            icon=":material/download:",
+    _, result_actions_column, _ = st.columns([1, 1.15, 1])
+    with result_actions_column:
+        download_column, restart_column = st.columns(
+            2,
+            gap="small",
         )
-        if st.button("다시하기", icon=":material/refresh:"):
-            reset_test()
+        with download_column:
+            st.download_button(
+                "이미지 저장",
+                data=result_image,
+                file_name=f"carbti-{user_mbti}.png",
+                mime="image/png",
+                icon=":material/download:",
+                width="stretch",
+            )
+        with restart_column:
+            if st.button(
+                "다시하기",
+                icon=":material/refresh:",
+                width="stretch",
+            ):
+                reset_test()
 
 
 def return_to_result_page():
@@ -1785,7 +2251,7 @@ VEHICLE_DETAIL_STYLE = """
   white-space: nowrap;
 }
 .carbti-news-title:hover {
-  color: #1769aa;
+  color: #007BFF;
   text-decoration: underline;
 }
 .carbti-news-date {
@@ -1891,6 +2357,7 @@ def render_vehicle_detail_page():
         recommendation_rows,
         "recom_reason",
     )
+    sales_chart_data = prepare_sales_chart_data(sales)
 
     st.html(VEHICLE_DETAIL_STYLE)
     st.title(display_text(vehicle["vehicle_name"], "차량 정보"))
@@ -1947,8 +2414,8 @@ def render_vehicle_detail_page():
     with info_column:
         with st.container(border=True):
             st.subheader("차량 정보")
-            primary, specification, maker = st.columns(
-                [1.15, 0.9, 0.8],
+            primary, sales_summary = st.columns(
+                [0.85, 1.35],
                 gap="small",
             )
 
@@ -1964,15 +2431,32 @@ def render_vehicle_detail_page():
                 st.caption("평균 가격")
                 st.write(average_price_text)
 
-            with specification:
-                st.caption("차종")
-                st.write(display_text(vehicle["body_type"]))
-                st.caption("연료 / 연비")
-                st.write(fuel_summary)
+            with sales_summary:
+                specification, maker = st.columns(2, gap="small")
+                with specification:
+                    st.caption("차종")
+                    st.write(display_text(vehicle["body_type"]))
+                    st.caption("연료 / 연비")
+                    st.write(fuel_summary)
 
-            with maker:
-                st.caption("제조사")
-                st.write(display_text(vehicle["manufacturer_name"]))
+                with maker:
+                    st.caption("제조사")
+                    st.write(display_text(vehicle["manufacturer_name"]))
+
+                st.caption("월별 거래량")
+                if sales_chart_data.empty:
+                    st.caption("등록된 거래량 데이터가 없습니다.")
+                else:
+                    st.line_chart(
+                        sales_chart_data,
+                        x="sales_period",
+                        y="sales_count",
+                        x_label="판매월",
+                        y_label="거래량",
+                        color="#007BFF",
+                        width="stretch",
+                        height=220,
+                    )
 
             st.divider()
             st.caption("추천 이유")
