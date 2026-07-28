@@ -30,6 +30,91 @@ st.set_page_config(
     layout="wide",
 )
 
+GLOBAL_FONT_STYLE = """
+<style>
+/*
+다른 폰트를 사용할 때 해당 @font-face 주석을 해제하고
+--carbti-font-family 값만 같은 글꼴 이름으로 변경합니다.
+
+@font-face {
+  font-family: 'CookieRun';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CookieRun';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CookieRun';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Black00.woff') format('woff');
+  font-weight: 900;
+  font-display: swap;
+}
+*/
+
+/*
+@font-face {
+  font-family: 'NexonMaplestory';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NexonMaplestory';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+*/
+
+@font-face {
+  font-family: 'YuhanKimberlyPureunsoop';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101517@font-2/font-2/font-2-300.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YuhanKimberlyPureunsoop';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101517@font-2/font-2/font-2-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YuhanKimberlyPureunsoop';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101517@font-2/font-2/font-2-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  /* --carbti-font-family: 'CookieRun'; */
+  /* --carbti-font-family: 'NexonMaplestory'; */
+  --carbti-font-family: 'YuhanKimberlyPureunsoop';
+}
+html,
+body,
+.stApp,
+.stApp *:not([data-testid="stIconMaterial"]):not(.material-symbols-rounded),
+.stApp button,
+.stApp input,
+.stApp textarea,
+.stApp select {
+  font-family: var(--carbti-font-family), sans-serif !important;
+}
+/* Streamlit의 머티리얼 아이콘 글꼴은 변경하지 않습니다. */
+[data-testid="stIconMaterial"],
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded' !important;
+}
+</style>
+"""
+
+st.html(GLOBAL_FONT_STYLE)
+
 
 # ------------------------------------------------------------
 # DB 연결 헬퍼
@@ -223,21 +308,17 @@ QUESTION_PAGE_STYLE = """
   line-height: 1.45;
   text-align: left;
 }
-.block-container:has(.carbti-question-intro)
-  div[data-testid="stRadio"] [role="radiogroup"] {
+div[data-testid="stRadio"] [role="radiogroup"] {
   align-items: stretch;
 }
-.block-container:has(.carbti-question-intro)
-  label[data-testid="stRadioOption"] {
+label[data-testid="stRadioOption"] {
   width: 100%;
 }
-.block-container:has(.carbti-question-intro)
-  label[data-testid="stRadioOption"] > div {
+label[data-testid="stRadioOption"] > div {
   width: 100%;
   justify-content: flex-start;
 }
-.block-container:has(.carbti-question-intro)
-  label[data-testid="stRadioOption"] p {
+label[data-testid="stRadioOption"] p {
   font-size: 1.1rem;
   line-height: 1.5;
   text-align: left;
@@ -821,6 +902,50 @@ def has_display_value(value):
     )
 
 
+def prepare_sales_chart_data(sales_rows):
+    """sales_stat 조회 결과를 차량별 월간 거래량 차트 형식으로 정리합니다."""
+
+    required_columns = {"sales_year", "sales_month", "sales_count"}
+    if sales_rows.empty or not required_columns.issubset(
+        sales_rows.columns
+    ):
+        return pd.DataFrame(columns=["sales_period", "sales_count"])
+
+    chart_rows = sales_rows[
+        ["sales_year", "sales_month", "sales_count"]
+    ].copy()
+    for column_name in required_columns:
+        chart_rows[column_name] = pd.to_numeric(
+            chart_rows[column_name],
+            errors="coerce",
+        )
+
+    chart_rows = chart_rows.dropna(subset=list(required_columns))
+    chart_rows = chart_rows[
+        chart_rows["sales_month"].between(1, 12)
+    ]
+    if chart_rows.empty:
+        return pd.DataFrame(columns=["sales_period", "sales_count"])
+
+    chart_rows["sales_year"] = chart_rows["sales_year"].astype(int)
+    chart_rows["sales_month"] = chart_rows["sales_month"].astype(int)
+    chart_rows = (
+        chart_rows.groupby(
+            ["sales_year", "sales_month"],
+            as_index=False,
+        )["sales_count"]
+        .sum()
+        .sort_values(["sales_year", "sales_month"])
+    )
+    chart_rows["sales_count"] = chart_rows["sales_count"].astype(int)
+    chart_rows["sales_period"] = (
+        chart_rows["sales_year"].astype(str)
+        + "-"
+        + chart_rows["sales_month"].astype(str).str.zfill(2)
+    )
+    return chart_rows[["sales_period", "sales_count"]]
+
+
 # %%
 # ============================================================
 # 셀 3. Streamlit 세션 상태 초기화
@@ -995,17 +1120,17 @@ def render_main_page():
 }
 div[data-testid="stButton"] > button[kind="primary"] {
   min-height: 3.7rem;
-  border: 2px solid #B8B8B8;
+  border: 2px solid #66B2FF;
   border-radius: 12px;
-  background: #454545;
+  background: #007BFF;
   color: #FFFFFF;
   font-size: 1.15rem;
   font-weight: 600;
-  box-shadow: none;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.24);
 }
 div[data-testid="stButton"] > button[kind="primary"]:hover {
-  border-color: #8F8F8F;
-  background: #353535;
+  border-color: #005FC7;
+  background: #0069D9;
   color: #FFFFFF;
 }
 .carbti-start-image-caption {
@@ -1187,7 +1312,7 @@ def render_question_page():
 
     render_scroll_to_top_if_requested()
 
-    questions_per_page = 4
+    questions_per_page = 5
 
     # 현재 페이지에서 시작할 질문 위치입니다.
     # 0, 5, 10, 15 순서로 이동합니다.
@@ -1221,14 +1346,16 @@ def render_question_page():
         page_questions[0]["id"],
         (),
     )
+    # 모든 질문 페이지에서 동일한 글자 크기와 선택지 레이아웃을 적용합니다.
+    st.html(QUESTION_PAGE_STYLE)
+
     if intro_lines:
         intro_html = "".join(
             f"<p>{html.escape(line)}</p>"
             for line in intro_lines
         )
         st.html(
-            QUESTION_PAGE_STYLE
-            + '<section class="carbti-question-intro">'
+            '<section class="carbti-question-intro">'
             + intro_html
             + "</section>"
         )
@@ -1399,8 +1526,38 @@ def calculate_results():
 # 셀 9. 결과 화면
 # ============================================================
 
+RESULT_FONT_URLS = {
+    False: (
+        "https://cdn.jsdelivr.net/gh/Project-Noonnu/"
+        "2607101517@font-2/font-2/font-2-500.woff2"
+    ),
+    True: (
+        "https://cdn.jsdelivr.net/gh/Project-Noonnu/"
+        "2607101517@font-2/font-2/font-2-700.woff2"
+    ),
+}
+
+
+@st.cache_data(ttl=86400, show_spinner=False)
+def download_result_font(font_url):
+    """다운로드 이미지에 사용할 웹폰트 파일을 불러옵니다."""
+
+    request = Request(
+        font_url,
+        headers={"User-Agent": "CarBTI-Streamlit/1.0"},
+    )
+    with urlopen(request, timeout=5) as response:
+        return response.read(5 * 1024 * 1024)
+
+
 def get_result_font(size, bold=False):
-    """운영체제에서 사용할 수 있는 한글 폰트를 찾아 반환합니다."""
+    """YuhanKimberlyPureunsoop을 우선 적용하고 실패하면 시스템 폰트를 사용합니다."""
+
+    try:
+        font_bytes = download_result_font(RESULT_FONT_URLS[bold])
+        return ImageFont.truetype(BytesIO(font_bytes), size=size)
+    except Exception:
+        pass
 
     font_candidates = [
         Path("C:/Windows/Fonts/malgunbd.ttf" if bold else "C:/Windows/Fonts/malgun.ttf"),
@@ -1534,7 +1691,7 @@ def build_result_image(user_mbti, mbti, recommendation):
         + recommendation["vehicle_name"]
     ).strip()
 
-    rank_text = "추천 1위"
+    rank_text = "1위"
     rank_box = draw.textbbox((0, 0), rank_text, font=caption_font)
     rank_width = rank_box[2] - rank_box[0]
     crown_width = 30
@@ -1921,7 +2078,7 @@ def render_vehicle_card(
 {opening_tag}
 {featured_header}
   <div class="carbti-vehicle-image-wrap">
-    <span class="carbti-vehicle-rank-badge">추천 {rank}위</span>
+    <span class="carbti-vehicle-rank-badge">{rank}위</span>
     {image_html}
   </div>
   <div class="carbti-vehicle-footer">
@@ -2191,6 +2348,7 @@ def render_vehicle_detail_page():
         recommendation_rows,
         "recom_reason",
     )
+    sales_chart_data = prepare_sales_chart_data(sales)
 
     st.html(VEHICLE_DETAIL_STYLE)
     st.title(display_text(vehicle["vehicle_name"], "차량 정보"))
@@ -2247,8 +2405,8 @@ def render_vehicle_detail_page():
     with info_column:
         with st.container(border=True):
             st.subheader("차량 정보")
-            primary, specification, maker = st.columns(
-                [1.15, 0.9, 0.8],
+            primary, sales_summary = st.columns(
+                [0.85, 1.35],
                 gap="small",
             )
 
@@ -2264,15 +2422,32 @@ def render_vehicle_detail_page():
                 st.caption("평균 가격")
                 st.write(average_price_text)
 
-            with specification:
-                st.caption("차종")
-                st.write(display_text(vehicle["body_type"]))
-                st.caption("연료 / 연비")
-                st.write(fuel_summary)
+            with sales_summary:
+                specification, maker = st.columns(2, gap="small")
+                with specification:
+                    st.caption("차종")
+                    st.write(display_text(vehicle["body_type"]))
+                    st.caption("연료 / 연비")
+                    st.write(fuel_summary)
 
-            with maker:
-                st.caption("제조사")
-                st.write(display_text(vehicle["manufacturer_name"]))
+                with maker:
+                    st.caption("제조사")
+                    st.write(display_text(vehicle["manufacturer_name"]))
+
+                st.caption("월별 거래량")
+                if sales_chart_data.empty:
+                    st.caption("등록된 거래량 데이터가 없습니다.")
+                else:
+                    st.line_chart(
+                        sales_chart_data,
+                        x="sales_period",
+                        y="sales_count",
+                        x_label="판매월",
+                        y_label="거래량",
+                        color="#007BFF",
+                        width="stretch",
+                        height=220,
+                    )
 
             st.divider()
             st.caption("추천 이유")
