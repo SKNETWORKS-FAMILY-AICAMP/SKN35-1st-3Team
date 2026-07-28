@@ -22,16 +22,10 @@
 
 |  | 팀원 1 | 팀원 2 | 팀원 3 | 팀원 4 | 팀원 5 |
 | --- | --- | --- | --- | --- | --- |
-<<<<<<< HEAD
-| 이름 | _조현주_ | _고태민_ | _권준호_ | _장인화_ | _정진봉_ |
-| 역할 | _(예: 팀장 / DB 설계)_ | _(예: 크롤링)_ | _(예: 프론트엔드)_ | _(예: 백엔드)_ | _(예: 데이터 분석)_ |
-| GitHub | [@](https://github.com/) | [@taemin1997](https://github.com/taemin1997) | [@Junho7-Kweon](https://github.com/Junho7-Kweon) | [@](https://github.com/) | [@](https://github.com/) |
-=======
 | 사진 | <img src="./images/레드.png" width="80"> | <img src="./images/블루.png" width="80"> | <img src="./images/그린.png" width="80"> | <img src="./images/옐로.png" width="80"> | <img src="./images/핑크.png" width="80"> |
 | 이름 | _조현주_ | _고태민_ | _권준호_ | _장인화_ | _정진봉_ |
 | 역할 | _(팀장 및 크롤링)_ | _(크롤링 및 DB 설계)_ | _(크롤링 및 화면서브 )_ | _(질문 설계 및 화면)_ | _(질문 설계 및 화면)_ |
 | GitHub | [@zozuzu](https://github.com/zozuzu) | [@taemin1997](https://github.com/taemin1997) | [@Junho7-Kweon](https://github.com/Junho7-Kweon) | [@inaskn35 ](https://github.com/) | [@rupria](https://github.com/) |
->>>>>>> f0dd90426a6075b7ba4964e8a481a3489a77be64
 
 > ✏️ 실제 팀원 정보로 표를 채워주세요.
 
@@ -86,11 +80,7 @@ mini_project1/
 
 ## 🗄️ ERD
 
-<<<<<<< HEAD
-![CARbti ERD](./CARbti_ERD.png)
-=======
 ![CARbti ERD](./images/CARbti_ERD.png)
->>>>>>> f0dd90426a6075b7ba4964e8a481a3489a77be64
 
 `car_mbti`(성향 유형) — `car_recommend` — `vehicle` — `vehicle_detail` — `vehicle_option` — `option` 이 서로 연결되고, `vehicle`은 `manufacturer`, `news`, `sales_stat`과도 연관됩니다.
 
@@ -153,10 +143,18 @@ url = "mysql+pymysql://username:password@host:3306/database"
 - 노트북(`streamlit_set.ipynb`)을 고치면 반드시 셀을 실행해 `app.py`를 갱신한 뒤, 두 파일을 함께 커밋합니다.
 - `app.py`의 `RESULT_PROFILES`에 정의된 `mbti_id`는 DB `car_mbti.mbti_id`와 반드시 일치해야 합니다.
 
-## 🔗 관련 이슈 / 개선 내역
+## ⚠️ 한계점 및 트러블슈팅
 
-<<<<<<< HEAD
-- [ ] _(이슈/개선 사항을 입력해주세요)_
-=======
-- [ ] _(이슈/개선 사항을 입력해주세요)_
->>>>>>> f0dd90426a6075b7ba4964e8a481a3489a77be64
+| 환경 세팅 통일 | 크롤링 차단 대응 | 데이터 정밀도 |
+| --- | --- | --- |
+| 🎯 초기 설정 불일치 이슈 | 🛡️ robots.txt 및 동적 렌더링 한계 | 📊 실거래가 연동 고도화 필요 |
+
+- **환경 세팅 통일**: 팀원별 로컬 Python/패키지 버전이 달라 초기 설정 단계에서 불일치가 발생했습니다. `uv`와 `pyproject.toml` / `.python-version`으로 환경을 고정해 재현성을 확보하는 방향으로 대응했습니다.
+- **크롤링 차단 대응**: 일부 사이트는 `robots.txt`로 자동 수집이 막혀 있거나 동적 렌더링(JS 기반)으로 인해 단순 요청 크롤링으로는 데이터 수집이 어려웠습니다. 해당 구간은 Selenium 기반 크롤링 또는 수동 확인 후 시드 데이터 입력 방식으로 우회했습니다.
+- **데이터 정밀도**: 현재 가격/시세 데이터는 공식 발표 자료 기반이라 실거래가와는 차이가 있을 수 있습니다. 추후 실거래가 API/데이터 연동을 통한 고도화가 필요합니다.
+
+## 🔗 앞으로의 개선 내역
+
+- [ ] **실거래가 데이터 연동**: 현재 비어있는 `sales_avg_price` 등 시세 정보를 실거래가 API/데이터와 연동해 정밀도 향상
+- [ ] **외부 거래 사이트 연동 방향 확정**: 추천 차량 클릭 시 외부 신차/중고차 거래 사이트로 연결하는 기능의 신차/중고 구분 방식 재검토 및 확정
+- [ ] **크롤링 자동화 범위 확대**: robots.txt 및 동적 렌더링으로 막혀 있던 구간(판매 통계 등)의 수집 자동화 검토
